@@ -1,0 +1,17 @@
+# General
+alias cc='clear'
+
+# LSD
+alias ls='lsd'
+
+alias l='ls -l --group-dirs=first'
+alias la='ls -a --group-dirs=first'
+alias lla='ls -la --group-dirs=first'
+alias lt='ls --tree'
+
+# Navigation
+
+# Git
+
+# DD
+
