@@ -1,0 +1,33 @@
+[user]
+	email = lukaszrabiec@gmail.com
+	name = Lucas
+[alias]
+	aa = add .
+	au = add -u
+	br = branch
+	bra = branch -a
+	brr = branch -r
+	brv = branch -vv
+	ch = checkout
+	chf = checkout -f
+	cli = clean -i
+	cm = commit
+	cms = log --branches --not --remotes --decorate --oneline
+	dt = difftool --dir-diff
+	fe = fetch
+	fep = fetch -p
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	mt = mergetool
+	puff = push --force-with-lease
+	rea = rebase --abort
+	rec = rebase --continue
+	res = rebase --skip
+	st = status
+[core]
+	editor = vim
+	excludeFile = ~/.gitignore
+[push]
+	default = simple
+[pager]
+	branch = false
+

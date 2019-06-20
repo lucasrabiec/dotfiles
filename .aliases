@@ -9,9 +9,23 @@ alias la='ls -a --group-dirs=first'
 alias lla='ls -la --group-dirs=first'
 alias lt='ls --tree'
 
-# Navigation
-
 # Git
+alias gac='git add . && git commit'
+alias gc='git checkout '
+alias gcm='git checkout master && git pull'
+alias gl='git log --online --all --graph --decorate $*'
+alias gpl='git pull'
+alias gph='git push'
+alias gri='git rebase -i `git merge-base HEAD master`'
+alias grm='git rebase master'
+alias gst='git status'
 
-# DD
+# Paths
+alias cdw='cd ~/Workspace'
+cdwc() { cd ~/Workspace/$1 ; }
+
+# NVM 
+alias nu6='nvm use 6'
+alias nu8='nvm use 8'
+alias nu10='nvm use 10'
 
