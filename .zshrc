@@ -4,6 +4,9 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="/home/lucas/.oh-my-zsh"
 
+# Variables
+export DOTFILES="/home/lucas/Private/repo/dotfiles"
+
 # Theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -46,7 +49,7 @@ POWERLEVEL9K_MODE="nerdfont_complete"
 
 ## Prompt elements
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(host root_indicator dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time node_version time)
 
 ## Prompt settings
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
@@ -94,12 +97,14 @@ POWERLEVEL9K_STATUS_ERROR_BACKGROUND='088'	# darkreda
 ## CET
 POWERLEVEL9K_EXECUTION_TIME_ICON='\uf252'
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='238'	# grey27
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='166'	# darkorange3a
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='208'	# darkorange
 
 ## Time
 POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M}"
 
 ## Programming languages
+### Node
+POWERLEVEL9K_NODE_VERSION_BACKGROUND='022'	# darkgreen
 
 # NVM
 ## Load nvm
@@ -126,5 +131,20 @@ load-nvmrc() {
     nvm use default
   fi
 }
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+#add-zsh-hook chpwd load-nvmrc
+#load-nvmrc
+
+# GCloud
+## The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/lucas/Applications/google-cloud-sdk/path.zsh.inc' ]; then . '/home/lucas/Applications/google-cloud-sdk/path.zsh.inc'; fi
+
+## The next line enables shell command completion for gcloud.
+if [ -f '/home/lucas/Applications/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/lucas/Applications/google-cloud-sdk/completion.zsh.inc'; fi
+
+# FZF
+[[ -f $DOTFILES/vendor/fzf/key-bindings.zsh ]] && source $DOTFILES/vendor/fzf/key-bindings.zsh
+[[ -f $DOTFILES/vendor/fzf/completions.zsh ]] && source $DOTFILES/vendor/fzf/completions.zsh
+export FZF_DEFAULT_OPTS='--no-reverse --exact --layout=reverse --height 40%'
+export FZF_CTRL_R_OPTS=''
+export FZF_CTRL_T_OPTS='--select-1 --exit-0'
+export FZF_ALT_C_OPTS='--select-1 --exit-0'

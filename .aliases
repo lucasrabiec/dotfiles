@@ -1,5 +1,6 @@
 # General
 alias cc='clear'
+alias nts='nautilus .'
 
 # LSD
 alias ls='lsd'
