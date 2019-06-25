@@ -15,16 +15,16 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Plugins to load
 plugins=(docker
-	 extract
-	 jira
-	 git
-	 gitfast
-	 ng
-	 python
-	 yarn
-	 zsh-autosuggestions
-	 zsh-completions
-	 zsh-syntax-highlighting)
+  extract
+  jira
+  git
+  gitfast
+  ng
+  python
+  yarn
+  zsh-autosuggestions
+  zsh-completions
+  zsh-syntax-highlighting)
 
 autoload -U compinit && compinit
 
@@ -55,7 +55,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time node_version t
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=false
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=$''
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=$'%K{black}%F{white} \ufb8a %f%F{black}%k\ue0c8%f '	# fb8a - skull
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX=$'%K{black}%F{white} \ufb8a %f%F{black}%k\ue0c8%f ' # fb8a - skull
 
 ## Host
 POWERLEVEL9K_HOST_ICON='\uf109'
@@ -85,32 +85,32 @@ POWERLEVEL9K_VCS_BOOKMARK='\uf461 '
 POWERLEVEL9K_VCS_TAG_ICON='\uf02b '
 POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON='\uf0aa '
 POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON='\uf0ab '
-POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='214'	# orange1
+POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='214' # orange1
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='red'
 
 ## Status
 POWERLEVEL9K_STATUS_VERBOSE=true
 POWERLEVEL9K_STATUS_OK=false
 POWERLEVEL9K_STATUS_ERROR_ICON='\uf00d'
-POWERLEVEL9K_STATUS_ERROR_BACKGROUND='088'	# darkreda
+POWERLEVEL9K_STATUS_ERROR_BACKGROUND='088' # darkreda
 
 ## CET
 POWERLEVEL9K_EXECUTION_TIME_ICON='\uf252'
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='238'	# grey27
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='208'	# darkorange
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='238' # grey27
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='208' # darkorange
 
 ## Time
 POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M}"
 
 ## Programming languages
 ### Node
-POWERLEVEL9K_NODE_VERSION_BACKGROUND='022'	# darkgreen
+POWERLEVEL9K_NODE_VERSION_BACKGROUND='022' # darkgreen
 
 # NVM
 ## Load nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_comp>
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_comp>
 
 ## Calling 'nvm use' automatically in a directory with a '.nvmrc' file
 autoload -U add-zsh-hook
