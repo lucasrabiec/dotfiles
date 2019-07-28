@@ -1,6 +1,6 @@
 <div align="center">
 
-### Fedora 30 [Gnome + zsh + powerlevel10k + Tilix + Spacemacs]
+### Fedora 30 [GNOME + zsh + powerlevel10k + Tilix + Dracula themes]
 
 ![Desktop](https://github.com/lucasrabiec/dotfiles/blob/master/docs/backgrounds/black-hole.png)
  
@@ -11,3 +11,24 @@
 </div>
 
 ## Table of Contents
+* [General Info](#general-info)
+* [Environment](#environment)
+* [Shell](#shell)
+* [Terminal](#terminal)
+* [Editors](#editors)
+* [Other](#other)
+* [Issues](#issues)
+
+## General Info
+
+## Environment
+
+## Shell
+
+## Terminal
+
+## Editors
+
+## Other
+
+## Issues
