@@ -24,7 +24,8 @@ plugins=(docker
   yarn
   zsh-autosuggestions
   zsh-completions
-  zsh-syntax-highlighting)
+  zsh-syntax-highlighting
+  virtualenvwrapper)
 
 autoload -U compinit && compinit
 
@@ -49,7 +50,7 @@ POWERLEVEL9K_MODE="nerdfont_complete"
 
 ## Prompt elements
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(host root_indicator dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time node_version time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time virtualenv node_version time)
 
 ## Prompt settings
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
@@ -100,11 +101,15 @@ POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='238' # grey27
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='208' # darkorange
 
 ## Time
-POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M}"
+POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M:%S}"
 
 ## Programming languages
 ### Node
 POWERLEVEL9K_NODE_VERSION_BACKGROUND='022' # darkgreen
+### virtualenv
+POWERLEVEL9K_VIRTUALENV_BACKGROUND='032' # darkgreen
+POWERLEVEL9K_VIRTUALENV_FOREGROUND='220' # gold1
+POWERLEVEL9K_PYTHON_ICON='\uf81f'
 
 # NVM
 ## Load nvm
@@ -131,8 +136,8 @@ load-nvmrc() {
     nvm use default
   fi
 }
-#add-zsh-hook chpwd load-nvmrc
-#load-nvmrc
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
 
 # GCloud
 ## The next line updates PATH for the Google Cloud SDK.
@@ -144,7 +149,19 @@ if [ -f '/home/lucas/Applications/google-cloud-sdk/completion.zsh.inc' ]; then .
 # FZF
 [[ -f $DOTFILES/vendor/fzf/key-bindings.zsh ]] && source $DOTFILES/vendor/fzf/key-bindings.zsh
 [[ -f $DOTFILES/vendor/fzf/completions.zsh ]] && source $DOTFILES/vendor/fzf/completions.zsh
-export FZF_DEFAULT_OPTS='--no-reverse --exact --layout=reverse --height 40%'
+export FZF_DEFAULT_OPTS='--multi --no-reverse --exact --layout=reverse --height 40%'
 export FZF_CTRL_R_OPTS=''
 export FZF_CTRL_T_OPTS='--select-1 --exit-0'
 export FZF_ALT_C_OPTS='--select-1 --exit-0'
+
+# virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON='/usr/bin/python3'
+export PATH=/home/lucas/.dronedeploy/kutil:/home/lucas/.virtualenvs/drone_pipeline/bin:/home/lucas/Applications/google-cloud-sdk/bin:/home/lucas/.nvm/versions/node/v10.16.0/bin:/home/lucas/bin:/usr/local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/home/lucas/bin:/opt/java/jdk/bin:/var/lib/snapd/snap/bin:/opt/java/jdk/bin
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /home/lucas/Workspace/dronedeploy/repo/apps/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/lucas/Workspace/dronedeploy/repo/apps/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /home/lucas/Workspace/dronedeploy/repo/apps/node_modules/tabtab/.completions/sls.zsh ]] && . /home/lucas/Workspace/dronedeploy/repo/apps/node_modules/tabtab/.completions/sls.zsh

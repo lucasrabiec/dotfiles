@@ -25,9 +25,8 @@
 	st = status
 [core]
 	editor = vim
-	excludeFile = ~/.gitignore
+	excludesFile = ~/.gitignore
 [push]
 	default = simple
 [pager]
 	branch = false
-

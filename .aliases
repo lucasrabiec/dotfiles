@@ -4,9 +4,9 @@ alias nts='nautilus .'
 
 # LSD
 alias ls='lsd'
-
-alias l='ls -l --group-dirs=first'
+alias l='ls --group-dirs=first'
 alias la='ls -a --group-dirs=first'
+alias ll='ls -l --group-dirs=first'
 alias lla='ls -la --group-dirs=first'
 alias lt='ls --tree'
 
@@ -14,12 +14,13 @@ alias lt='ls --tree'
 alias gac='git add . && git commit'
 alias gc='git checkout '
 alias gcm='git checkout master && git pull'
-alias gl='git log --online --all --graph --decorate $*'
+alias gl='git log --oneline --all --graph --decorate $*'
 alias gpl='git pull'
 alias gph='git push'
 alias gri='git rebase -i `git merge-base HEAD master`'
 alias grm='git rebase master'
 alias gst='git status'
+alias gsu='git submodule update'
 
 # Paths
 alias cdw='cd ~/Workspace'
