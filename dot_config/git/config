@@ -1,0 +1,76 @@
+# See https://git-scm.com/docs/git-config
+
+[user]
+  name = Lukasz Rabiec
+  email = lukaszrabiec@gmail.com
+[alias]
+  aa = add .
+  ai = add -i
+  au = add -u
+  br = branch
+  bra = branch -a
+  brr = branch -r
+  brv = branch -vv
+  ch = checkout
+  chf = checkout -f
+  cli = clean -i
+  cm = commit
+  cma = commit --amend
+  cms = log --branches --not --remotes --decorate --oneline
+  dt = difftool --dir-diff
+  fe = fetch
+  fep = fetch -p
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  mt = mergetool
+  puff = push --force-with-lease
+  rea = rebase --abort
+  rec = rebase --continue
+  res = rebase --skip
+  st = status
+  build = "!f() { [[ -z \"$GIT_PREFIX\" ]] || cd \"$GIT_PREFIX\" && if [ -z \"$1\" ]; then git commit -m \"build: \" -e; elif [ \"$1\" == \"-s\" ]; then git commit -m \"build(${2}): ${@:3}\"; else git commit -m \"build: ${@}\"; fi }; f"
+  chore = "!f() { [[ -z \"$GIT_PREFIX\" ]] || cd \"$GIT_PREFIX\" && if [ -z \"$1\" ]; then git commit -m \"chore: \" -e; elif [ \"$1\" == \"-s\" ]; then git commit -m \"chore(${2}): ${@:3}\"; else git commit -m \"chore: ${@}\"; fi }; f"
+  ci = "!f() { [[ -z \"$GIT_PREFIX\" ]] || cd \"$GIT_PREFIX\" && if [ -z \"$1\" ]; then git commit -m \"ci: \" -e; elif [ \"$1\" == \"-s\" ]; then git commit -m \"ci(${2}): ${@:3}\"; else git commit -m \"ci: ${@}\"; fi }; f"
+  docs = "!f() { [[ -z \"$GIT_PREFIX\" ]] || cd \"$GIT_PREFIX\" && if [ -z \"$1\" ]; then git commit -m \"docs: \" -e; elif [ \"$1\" == \"-s\" ]; then git commit -m \"docs(${2}): ${@:3}\"; else git commit -m \"docs: ${@}\"; fi }; f"
+  feat = "!f() { [[ -z \"$GIT_PREFIX\" ]] || cd \"$GIT_PREFIX\" && if [ -z \"$1\" ]; then git commit -m \"feat: \" -e; elif [ \"$1\" == \"-s\" ]; then git commit -m \"feat(${2}): ${@:3}\"; else git commit -m \"feat: ${@}\"; fi }; f"
+  fix = "!f() { [[ -z \"$GIT_PREFIX\" ]] || cd \"$GIT_PREFIX\" && if [ -z \"$1\" ]; then git commit -m \"fix: \" -e; elif [ \"$1\" == \"-s\" ]; then git commit -m \"fix(${2}): ${@:3}\"; else git commit -m \"fix: ${@}\"; fi }; f"
+  perf = "!f() { [[ -z \"$GIT_PREFIX\" ]] || cd \"$GIT_PREFIX\" && if [ -z \"$1\" ]; then git commit -m \"perf: \" -e; elif [ \"$1\" == \"-s\" ]; then git commit -m \"perf(${2}): ${@:3}\"; else git commit -m \"perf: ${@}\"; fi }; f"
+  refactor = "!f() { [[ -z \"$GIT_PREFIX\" ]] || cd \"$GIT_PREFIX\" && if [ -z \"$1\" ]; then git commit -m \"refactor: \" -e; elif [ \"$1\" == \"-s\" ]; then git commit -m \"refactor(${2}): ${@:3}\"; else git commit -m \"refactor: ${@}\"; fi }; f"
+  revert = "!f() { [[ -z \"$GIT_PREFIX\" ]] || cd \"$GIT_PREFIX\" && if [ -z \"$1\" ]; then git commit -m \"revert: \" -e; elif [ \"$1\" == \"-s\" ]; then git commit -m \"revert(${2}): ${@:3}\"; else git commit -m \"revert: ${@}\"; fi }; f"
+  style = "!f() { [[ -z \"$GIT_PREFIX\" ]] || cd \"$GIT_PREFIX\" && if [ -z \"$1\" ]; then git commit -m \"style: \" -e; elif [ \"$1\" == \"-s\" ]; then git commit -m \"style(${2}): ${@:3}\"; else git commit -m \"style: ${@}\"; fi }; f"
+  test = "!f() { [[ -z \"$GIT_PREFIX\" ]] || cd \"$GIT_PREFIX\" && if [ -z \"$1\" ]; then git commit -m \"test: \" -e; elif [ \"$1\" == \"-s\" ]; then git commit -m \"test(${2}): ${@:3}\"; else git commit -m \"test: ${@}\"; fi }; f"
+[core]
+  editor = nvim
+	excludesfile = .gitignore
+  pager = diff-so-fancy | less --tabs=4 -RFX
+[pull]
+  ff = true
+  rebase = true
+[pager]
+  branch = false
+[init]
+	defaultBranch = main
+[diff]
+	algorithm = histogram    # Clearer diffs on moved/edited lines
+	colorMoved = plain       # Highlight moved blocks in diffs
+	mnemonicPrefix = true    # More intuitive refs in diff output
+[commit]
+	verbose = true           # Include diff comment in commit message template
+[column]
+	ui = auto 			     # Output in columns when possible
+[branch]
+	sort = -committerdate    # Sort branches by most recent commit first
+[tag]
+	sort = -version:refname  # Sort version numbers as you would expect
+[rerere]
+	enabled = true           # Record and reuse conflict resolutions
+	autoupdate = true        # Apply stored conflict resolutions automatically
+[fetch]
+	prune = true
+[filter "lfs"]
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+[interactive]
+  diffFilter = diff-so-fancy --patch
+  singleKey = true
