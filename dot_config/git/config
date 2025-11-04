@@ -40,7 +40,7 @@
   test = "!f() { [[ -z \"$GIT_PREFIX\" ]] || cd \"$GIT_PREFIX\" && if [ -z \"$1\" ]; then git commit -m \"test: \" -e; elif [ \"$1\" == \"-s\" ]; then git commit -m \"test(${2}): ${@:3}\"; else git commit -m \"test: ${@}\"; fi }; f"
 [core]
   editor = nvim
-	excludesfile = .gitignore
+  excludesfile = .gitignore
   pager = diff-so-fancy | less --tabs=4 -RFX
 [pull]
   ff = true
@@ -48,24 +48,24 @@
 [pager]
   branch = false
 [init]
-	defaultBranch = main
+  defaultBranch = main
 [diff]
-	algorithm = histogram    # Clearer diffs on moved/edited lines
-	colorMoved = plain       # Highlight moved blocks in diffs
-	mnemonicPrefix = true    # More intuitive refs in diff output
+  algorithm = histogram    # Clearer diffs on moved/edited lines
+  colorMoved = plain       # Highlight moved blocks in diffs
+  mnemonicPrefix = true    # More intuitive refs in diff output
 [commit]
-	verbose = true           # Include diff comment in commit message template
+  verbose = true           # Include diff comment in commit message template
 [column]
-	ui = auto 			     # Output in columns when possible
+  ui = auto                # Output in columns when possible
 [branch]
-	sort = -committerdate    # Sort branches by most recent commit first
+  sort = -committerdate    # Sort branches by most recent commit first
 [tag]
-	sort = -version:refname  # Sort version numbers as you would expect
+  sort = -version:refname  # Sort version numbers as you would expect
 [rerere]
-	enabled = true           # Record and reuse conflict resolutions
-	autoupdate = true        # Apply stored conflict resolutions automatically
+  enabled = true           # Record and reuse conflict resolutions
+  autoupdate = true        # Apply stored conflict resolutions automatically
 [fetch]
-	prune = true
+  prune = true
 [filter "lfs"]
   required = true
   clean = git-lfs clean -- %f
