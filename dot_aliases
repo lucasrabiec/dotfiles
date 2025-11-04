@@ -1,0 +1,29 @@
+# General
+alias cc='clear'
+
+# LSD
+alias ls='lsd'
+alias l='ls --group-dirs=first'
+alias la='ls -a --group-dirs=first'
+alias ll='ls -l --group-dirs=first'
+alias lla='ls -la --group-dirs=first'
+alias lt='ls --tree'
+
+# Git
+alias gac='git add . && git commit'
+alias gc='git checkout '
+alias gcm='git checkout main && git pull'
+alias gl='git log --oneline --all --graph --decorate $*'
+alias gpl='git pull'
+alias gph='git push'
+alias gri='git rebase -i `git merge-base HEAD main`'
+alias grm='git rebase main'
+alias gst='git status'
+alias gsu='git submodule update --remote'
+
+# Paths
+alias cdw='cd ~/Work/'
+cdwc() { cd ~/Work/$1 ; }
+
+# Other
+alias lg='lazygit'
