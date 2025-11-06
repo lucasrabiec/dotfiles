@@ -8,9 +8,10 @@
 - [MacOS](https://rickrolled.com/?title=Download+MacOS&desc=How+to+download+and+install+macOS)
 
 ## ⚔️ Brace yourself 
-1. Install [age](https://github.com/FiloSottile/age) for chezmoi encryption
-1. Install [chezmoi](https://www.chezmoi.io) to init and manage this repo
-2. Install [zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH#install-and-set-up-zsh-as-default)
+1. Install [age](https://github.com/FiloSottile/age) for chezmoi encryption.
+1. Install [keychain](https://archlinux.org/packages/extra/any/keychain) package (Omarchy only)
+1. Install [chezmoi](https://www.chezmoi.io) to init and manage this repo.
+1. Install [zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH#install-and-set-up-zsh-as-default).
 
 ## 🛫 Insert before flight
 
@@ -21,7 +22,8 @@
 **("You must gather your party before venturing forth")**
 
 - [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh) - A delightful community-driven framework for managing zsh configuration. 
-- [lsd](https://github.com/lsd-rs/lsd) - Next gen ls command
+- [lsd](https://github.com/lsd-rs/lsd) - Next gen ls command.
+- [oh-my-posh](https://ohmyposh.dev) - The most customizable and fastest prompt engine for any shell.
 
 ## 🧛🏻‍♂️ Theming
 <img width="400" src="https://github.com/user-attachments/assets/b6920e5d-0804-40ae-84ce-eed89cddfdc5" />
