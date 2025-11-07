@@ -1,0 +1,25 @@
+return {
+  "stevearc/conform.nvim",
+  opts = {
+    formatters_by_ft = {
+      javascript = { "prettier" },
+      javascriptreact = { "prettier" },
+      typescript = { "prettier" },
+      typescriptreact = { "prettier" },
+      vue = { "prettier" },
+      css = { "prettier" },
+      scss = { "prettier" },
+      less = { "prettier" },
+      html = { "prettier" },
+      json = { "prettier" },
+      yaml = { "yamlfmt" },
+      python = { "ruff_fix", "ruff_organize_imports" },
+      cs = { "csharpier" },
+      kotlin = { "ktlint" },
+      java = { "ktlint" },
+      xml = { "xmlformatter" },
+      markdown = { "prettier", "markdownlint-cli2", "markdown-toc" },
+      ["markdown.mdx"] = { "prettier", "markdownlint-cli2", "markdown-toc" },
+    },
+  },
+}

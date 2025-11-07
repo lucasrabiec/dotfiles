@@ -1,0 +1,119 @@
+return {
+  -- {
+  --   "nvim-treesitter/nvim-treesitter",
+  --   opts = function(_, opts)
+  --     if type(opts.ensure_installed) == "table" then
+  --       vim.list_extend(opts.ensure_installed, { "typescript", "tsx" })
+  --     end
+  --   end,
+  -- },
+  -- {
+  --   "pmizio/typescript-tools.nvim",
+  --   dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+  --   opts = {
+  --     on_attach = function(_, buffer)
+  --       vim.keymap.set(
+  --         "n",
+  --         "<leader>co",
+  --         "<cmd>TSToolsOrganizeImports<cr>",
+  --         { desc = "Organize imports", buffer = buffer }
+  --       )
+  --       vim.keymap.set("n", "<leader>cs", "<cmd>TSToolsSortImports<cr>", { desc = "Sort imports", buffer = buffer })
+  --       vim.keymap.set(
+  --         "n",
+  --         "<leader>ci",
+  --         "<cmd>TSToolsAddMissingImports<cr>",
+  --         { desc = "Add missing imports", buffer = buffer }
+  --       )
+  --       vim.keymap.set("n", "<leader>cf", "<cmd>TSToolsFixAll<cr>", { desc = "Fix all", buffer = buffer })
+  --       vim.keymap.set(
+  --         "n",
+  --         "<leader>cu",
+  --         "<cmd>TSToolsRemoveUnused<cr>",
+  --         { desc = "Remove all unused", buffer = buffer }
+  --       )
+  --       vim.keymap.set(
+  --         "n",
+  --         "<leader>cU",
+  --         "<cmd>TSToolsRemoveUnusedImports<cr>",
+  --         { desc = "Remove only unused imports", buffer = buffer }
+  --       )
+  --       vim.keymap.set(
+  --         "n",
+  --         "gT", -- keep it near to other Goto shortcuts
+  --         "<cmd>TSToolsGoToSourceDefinition<cr>",
+  --         { desc = "Goto source definition", buffer = buffer }
+  --       )
+  --     end,
+  --   },
+  -- },
+  -- {
+  --   "neovim/nvim-lspconfig",
+  --   opts = {
+  --     servers = {
+  --       eslint = {
+  --         on_attach = function(_, bufnr)
+  --           vim.api.nvim_create_autocmd({ "BufWritePre", "BufLeave", "WinLeave", "FocusLost" }, {
+  --             -- vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  --             buffer = bufnr,
+  --             command = "EslintFixAll",
+  --           })
+  --         end,
+  --         root_dir = require("lspconfig.util").find_git_ancestor,
+  --       },
+  --     },
+  --   },
+  -- },
+  -- {
+  --   "mfussenegger/nvim-dap",
+  --   optional = true,
+  --   dependencies = {
+  --     {
+  --       "williamboman/mason.nvim",
+  --       opts = function(_, opts)
+  --         opts.ensure_installed = opts.ensure_installed or {}
+  --         table.insert(opts.ensure_installed, "js-debug-adapter")
+  --       end,
+  --     },
+  --   },
+  --   opts = function()
+  --     local dap = require("dap")
+  --     if not dap.adapters["pwa-node"] then
+  --       require("dap").adapters["pwa-node"] = {
+  --         type = "server",
+  --         host = "localhost",
+  --         port = "${port}",
+  --         executable = {
+  --           command = "node",
+  --           -- 💀 Make sure to update this path to point to your installation
+  --           args = {
+  --             require("mason-registry").get_package("js-debug-adapter"):get_install_path()
+  --               .. "/js-debug/src/dapDebugServer.js",
+  --             "${port}",
+  --           },
+  --         },
+  --       }
+  --     end
+  --     for _, language in ipairs({ "typescript", "javascript" }) do
+  --       if not dap.configurations[language] then
+  --         dap.configurations[language] = {
+  --           {
+  --             type = "pwa-node",
+  --             request = "launch",
+  --             name = "Launch file",
+  --             program = "${file}",
+  --             cwd = "${workspaceFolder}",
+  --           },
+  --           {
+  --             type = "pwa-node",
+  --             request = "attach",
+  --             name = "Attach",
+  --             processId = require("dap.utils").pick_process,
+  --             cwd = "${workspaceFolder}",
+  --           },
+  --         }
+  --       end
+  --     end
+  --   end,
+  -- },
+}
