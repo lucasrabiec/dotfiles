@@ -25,6 +25,11 @@
 - [oh-my-posh](https://ohmyposh.dev) - The most customizable and fastest prompt engine for any shell.
 - [hyprsession](https://github.com/joshurtree/hyprsession) - Session saver for Hyprland 
 
+## Web Apps (Omarchy only)
+For a better experience, some programs are better installed as a web app. (SUPER, ALT + SPACE > Install > Web App)
+- Microsoft Teams
+- Microsoft Outlook
+
 ## 🧛🏻‍♂️ Theming
 <img width="400" src="https://github.com/user-attachments/assets/b6920e5d-0804-40ae-84ce-eed89cddfdc5" />
 <br/>
