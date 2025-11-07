@@ -23,6 +23,7 @@
 - [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh) - A delightful community-driven framework for managing zsh configuration. 
 - [lsd](https://github.com/lsd-rs/lsd) - Next gen ls command.
 - [oh-my-posh](https://ohmyposh.dev) - The most customizable and fastest prompt engine for any shell.
+- [hyprsession](https://github.com/joshurtree/hyprsession) - Session saver for Hyprland 
 
 ## 🧛🏻‍♂️ Theming
 <img width="400" src="https://github.com/user-attachments/assets/b6920e5d-0804-40ae-84ce-eed89cddfdc5" />
