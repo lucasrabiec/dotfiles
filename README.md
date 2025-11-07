@@ -9,7 +9,6 @@
 
 ## ⚔️ Brace yourself 
 1. Install [age](https://github.com/FiloSottile/age) for chezmoi encryption.
-1. Install [keychain](https://archlinux.org/packages/extra/any/keychain) package (Omarchy only)
 1. Install [chezmoi](https://www.chezmoi.io) to init and manage this repo.
 1. Install [zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH#install-and-set-up-zsh-as-default).
 
