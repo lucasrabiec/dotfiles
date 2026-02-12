@@ -8,6 +8,12 @@
 - [MacOS](https://rickrolled.com/?title=Download+MacOS&desc=How+to+download+and+install+macOS)
 
 ## ⚔️ Brace yourself 
+
+1. Limine configuration
+    1. Disable Secure Boot in BIOS and install Omarchy
+    1. Change Boot priority to Limine
+    1. Run `limine-scan` in terminal and choose Windows Boot Manager - it should add record to `/boot/limine.conf`
+    1. Run `sudo nvim /boot/limine.conf` and change timeout to `10` and set default entry (from 1)
 1. Install [age](https://github.com/FiloSottile/age) for chezmoi encryption.
 1. Install [chezmoi](https://www.chezmoi.io) to init and manage this repo.
 1. Install [zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH#install-and-set-up-zsh-as-default).
