@@ -9,14 +9,20 @@
 
 ## ⚔️ Brace yourself 
 
-1. Limine configuration
-    1. Disable Secure Boot in BIOS and install Omarchy
-    1. Change Boot priority to Limine
-    1. Run `limine-scan` in terminal and choose Windows Boot Manager - it should add record to `/boot/limine.conf`
-    1. Run `sudo nvim /boot/limine.conf` and change timeout to `10` and set default entry (from 1)
-1. Install [age](https://github.com/FiloSottile/age) for chezmoi encryption.
-1. Install [chezmoi](https://www.chezmoi.io) to init and manage this repo.
-1. Install [zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH#install-and-set-up-zsh-as-default).
+Configure Limine
+1. Disable Secure Boot in BIOS and install Omarchy
+1. Change Boot priority to Limine
+1. Run `limine-scan` in terminal and choose Windows Boot Manager - it should add record to `/boot/limine.conf`
+1. Run `sudo nvim /boot/limine.conf` and change timeout to `10` and set default entry (from 1)
+
+Then fix a clock issue with Dual Boot - run this command in linux terminal: `timedatectl set-local-rtc 1` and install:
+
+- [age](https://github.com/FiloSottile/age) - for chezmoi encryption.
+- [zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH#install-and-set-up-zsh-as-default) - FTW!
+- zsh theme - [dracula](https://draculatheme.com/zsh) is the best
+- [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh) - a delightful community-driven framework for managing zsh configuration. 
+- [oh-my-posh](https://ohmyposh.dev) - the most customizable and fastest prompt engine for any shell.
+- [chezmoi](https://www.chezmoi.io) - to init and manage this repo.
 
 ## 🛫 Insert before flight
 
@@ -26,9 +32,7 @@
 <br/>
 **("You must gather your party before venturing forth")**
 
-- [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh) - A delightful community-driven framework for managing zsh configuration. 
 - [lsd](https://github.com/lsd-rs/lsd) - Next gen ls command.
-- [oh-my-posh](https://ohmyposh.dev) - The most customizable and fastest prompt engine for any shell.
 - [hyprsession](https://github.com/joshurtree/hyprsession) - Session saver for Hyprland 
 
 ## Web Apps (Omarchy only)
@@ -42,6 +46,8 @@ For a better experience, some programs are better installed as a web app. (SUPER
 
 **One [theme](https://draculatheme.com). All platforms.**
 
-- [zsh](https://draculatheme.com/zsh)
-- [OS](https://draculatheme.com/omarchy) (Omarchy only)
+- [OS](https://draculatheme.com/omarchy) (Omarchy only) 
+    - `omarchy-theme-install https://github.com/catlee/omarchy-dracula-theme`
 - [Wallpaper](https://raw.githubusercontent.com/basecamp/omarchy/refs/heads/master/themes/tokyo-night/backgrounds/1-scenery-pink-lakeside-sunset-lake-landscape-scenic-panorama-7680x3215-144.png)
+    - `cd /home/lucas/.config/omarchy/backgrounds/dracula`
+    - `curl https://raw.githubusercontent.com/basecamp/omarchy/refs/heads/master/themes/tokyo-night/backgrounds/1-scenery-pink-lakeside-sunset-lake-landscape-scenic-panorama-7680x3215-144.png --output=sunset-lake.png`
