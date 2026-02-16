@@ -14,9 +14,7 @@
     1. Change Boot priority to Limine
     1. Run `limine-scan` in terminal and choose Windows Boot Manager - it should add record to `/boot/limine.conf`
     1. Run `sudo nvim /boot/limine.conf` and change timeout to `10` and set default entry (from 1)
-
 1. Fix a clock issue with Dual Boot - run this command in linux terminal: `timedatectl set-local-rtc 1`
-
 1. Install:
     - [age](https://github.com/FiloSottile/age) - for chezmoi encryption.
     - [zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH#install-and-set-up-zsh-as-default) - FTW!
@@ -25,8 +23,6 @@
     - [oh-my-posh](https://ohmyposh.dev) - the most customizable and fastest prompt engine for any shell.
         - `eval "$(oh-my-posh init zsh --config ~/.dracula.omp.json)"`
     - nvm - node version manager
-    - [chezmoi](https://www.chezmoi.io) - to init and manage this repo.
-
 1. Save ssh keys for current session
     Open `nvim ~/.ssh/config` and save this:
 
@@ -39,6 +35,11 @@
     1. Open `sudo nvim /etc/locale.gen` and uncomment `pl.PL.utf8` then save
     1. Call `sudo locale-gen`
     1. Apply Waybar config with `killall waybar && waybar &`
+1. Clear preconfigured omarchy's nvim to apply clean config from chezmoi
+    1. Remove omarchy-nvim package
+    1. Remove nvim from `~/.local/share/` and `~/.config/`
+1. Install chezmoi and init with this repo url.
+1. Install all needed languages and packages for nvim. Open nvim and run `:checkhealth` command then install missing stuff.
 
 ## 🛫 Insert before flight
 
