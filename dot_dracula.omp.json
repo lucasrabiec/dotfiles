@@ -21,9 +21,6 @@
       "alignment": "left",
       "segments": [
         {
-          "properties": {
-            "cache_duration": "none"
-          },
           "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
           "foreground": "p:foreground",
           "background": "p:comment",
@@ -31,10 +28,10 @@
           "style": "diamond"
         },
         {
-          "properties": {
-            "cache_duration": "none",
+          "options": {
             "home_icon": "~",
-            "style": "folder"
+            "style": "agnoster_short",
+            "max_depth": 3
           },
           "template": " \uf07c {{ .Path }} ",
           "foreground": "p:background",
@@ -44,11 +41,9 @@
           "style": "powerline"
         },
         {
-          "properties": {
+          "options": {
             "branch_icon": " \uf126 ",
             "tag_icon": " \uf412 ",
-            "cache_duration": "none",
-            "fetch_stash_count": true,
             "fetch_status": true,
             "fetch_upstream_icon": true
           },
@@ -72,9 +67,8 @@
       "alignment": "right",
       "segments": [
         {
-          "properties": {
-            "always_enabled": true,
-            "cache_duration": "none"
+          "options": {
+            "always_enabled": true
           },
           "template": " {{ if gt .Code 0 }}{{ reason .Code }}{{ else }}\uf42e{{ end }} ",
           "foreground": "p:green",
@@ -88,9 +82,6 @@
           "invert_powerline": true
         },
         {
-          "properties": {
-            "cache_duration": "none"
-          },
           "template": " {{ .FormattedMs }} \uf252 ",
           "foreground": "p:background",
           "powerline_symbol": "\ue0b2",
@@ -100,7 +91,7 @@
           "invert_powerline": true
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": " \uf0ad ",
@@ -112,7 +103,7 @@
           "invert_powerline": true
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none",
             "display_mode": "files"
           },
@@ -125,7 +116,7 @@
           "invert_powerline": true
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none",
             "fetch_version": true
           },
@@ -138,7 +129,7 @@
           "invert_powerline": true
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none",
             "fetch_version": true
           },
@@ -151,7 +142,7 @@
           "invert_powerline": true
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none",
             "fetch_version": true
           },
@@ -164,7 +155,7 @@
           "invert_powerline": true
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none",
             "display_mode": "context",
             "fetch_version": true,
@@ -179,7 +170,7 @@
           "invert_powerline": true
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none",
             "display_mode": "context",
             "fetch_version": true,
@@ -194,7 +185,7 @@
           "invert_powerline": true
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none",
             "display_mode": "files",
             "fetch_version": true
@@ -208,7 +199,7 @@
           "invert_powerline": true
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none",
             "fetch_version": true
           },
@@ -221,8 +212,7 @@
           "invert_powerline": true
         },
         {
-          "properties": {
-            "cache_duration": "none",
+          "options": {
             "display_default": false
           },
           "template": " {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} \ue7ad ",
@@ -237,7 +227,7 @@
           "invert_powerline": true
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue7dd ",
@@ -249,7 +239,7 @@
           "invert_powerline": true
         },
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue7ba ",
@@ -261,9 +251,6 @@
           "invert_powerline": true
         },
         {
-          "properties": {
-            "cache_duration": "none"
-          },
           "template": " {{ .CurrentDate | date .Format }} \uf017 ",
           "foreground": "p:foreground",
           "background": "p:comment",
@@ -279,7 +266,7 @@
       "newline": true,
       "segments": [
         {
-          "properties": {
+          "options": {
             "cache_duration": "none"
           },
           "template": "\u276f",
