@@ -42,6 +42,9 @@
         - `eval "$(oh-my-posh init zsh --config ~/.dracula.omp.json)"`
     - Install [zsh-autosuggestions]() and [zsh-syntax-highlights]
 1. Install all needed languages and packages for nvim. Open nvim and run `:checkhealth` command then install missing stuff.
+    - Install languages and tools through Omarchy's `Install > Development` menu except python
+    - For python versioning and venvs use `uv` (installed via `mise` or Arch repo)
+    - NodeJS should be managed by `mise`
 
 ## 🛫 Insert before flight
 
@@ -54,6 +57,7 @@
 - [lsd](https://github.com/lsd-rs/lsd) - Next gen ls command.
 - [hyprsession](https://github.com/joshurtree/hyprsession) - Session saver for Hyprland 
 - [ghostty](https://ghostty.org/docs) - terminal emulator
+- Android Studio
 
 
 ## Web Apps (Omarchy only)
