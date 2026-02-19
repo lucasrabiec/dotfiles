@@ -1,0 +1,12 @@
+[Unit]
+Description=Rclone Mount Google Drive 1MB
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/rclone mount gdrive-1mb: /home/lucas/Sync/gdrive-1mb --vfs-cache-mode full
+ExecStop=/bin/fusermount3 -u /home/lucas/Sync/gdrive-1mb/
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

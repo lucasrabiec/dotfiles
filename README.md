@@ -57,7 +57,9 @@
 - [lsd](https://github.com/lsd-rs/lsd) - Next gen ls command.
 - [hyprsession](https://github.com/joshurtree/hyprsession) - Session saver for Hyprland 
 - [ghostty](https://ghostty.org/docs) - terminal emulator
-- Android Studio
+- [rclone](https://rclone.org/) - syncing files to cloud storage
+    - mount needed drives
+- [Android Studio](https://developer.android.com/studio) - IDE for Android Apps
 
 
 ## Web Apps (Omarchy only)
@@ -73,6 +75,7 @@ For a better experience, some programs are better installed as a web app. (SUPER
 
 - [OS](https://draculatheme.com/omarchy) (Omarchy only) 
     - `omarchy-theme-install https://github.com/catlee/omarchy-dracula-theme`
+- [Ghostty](https://draculatheme.com/ghostty)
 - [Wallpaper](https://raw.githubusercontent.com/basecamp/omarchy/refs/heads/master/themes/tokyo-night/backgrounds/1-scenery-pink-lakeside-sunset-lake-landscape-scenic-panorama-7680x3215-144.png)
     - `cd /home/lucas/.config/omarchy/backgrounds/dracula`
     - `curl https://raw.githubusercontent.com/basecamp/omarchy/refs/heads/master/themes/tokyo-night/backgrounds/1-scenery-pink-lakeside-sunset-lake-landscape-scenic-panorama-7680x3215-144.png --output=sunset-lake.png`

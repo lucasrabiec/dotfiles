@@ -1,0 +1,12 @@
+[Unit]
+Description=Rclone Mount Google Drive Private
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/rclone mount gdrive-priv: /home/lucas/Sync/gdrive-priv --vfs-cache-mode full
+ExecStop=/bin/fusermount3 -u /home/lucas/Sync/gdrive-priv/
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
