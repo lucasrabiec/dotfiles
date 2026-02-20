@@ -19,6 +19,9 @@ return {
     scroll = {
       enabled = false, -- disable scrolling animations
     },
+    explorer = {
+      enabled = false,
+    },
     dashboard = {
       formats = {
         file = function(item, ctx)
@@ -52,6 +55,12 @@ return {
         { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 3 },
         { section = "startup" },
       },
+    },
+    keys = {
+      { "<leader>fe", false },
+      { "<leader>fE", false },
+      { "<leader>E", false },
+      { "<leader>e", false },
     },
   },
 }

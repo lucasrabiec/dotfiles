@@ -60,6 +60,7 @@
 - [rclone](https://rclone.org/) - syncing files to cloud storage
     - mount needed drives
 - [Android Studio](https://developer.android.com/studio) - IDE for Android Apps
+- Fira Code font (`Install > Style > Font`)
 
 
 ## Web Apps (Omarchy only)

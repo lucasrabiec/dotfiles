@@ -5,8 +5,8 @@
 # Optimized for retina-class 2x displays, like 13" 2.8K, 27" 5K, 32" 6K.
 env = GDK_SCALE,1
 
-{{ if eq .chezmoi.hostname "omarchy-work" }}
-# Omarchy Laptop
+monitor=desc:Nreal Air 2 Ultra 0x88888800, 1920x1080@60.00Hz, auto-left, auto # XREAL Air 2 Ultra Glasses
+{{- if eq .chezmoi.hostname "omarchy-work" }}
 monitor=desc:AU Optronics 0x7DB2, 2560x1600@240.00Hz, auto, auto  # Laptop
 monitor=desc:LG Electronics LG ULTRAWIDE 112NTGYBP239, 3440x1440@84.96Hz, auto-left, auto # Laptop - extended
 
@@ -16,8 +16,7 @@ workspace=3,monitor:HDMI-A-1
 workspace=4,monitor:eDP-2, default:true
 workspace=5,monitor:eDP-2
 workspace=6,monitor:eDP-2
-{{ else }}
-# Omarchy PC
+{{- else }}
 monitor=DP-1,2560x1440@239.99Hz,auto,auto  # PC Center
 monitor=DP-3,2560x1440@165Hz,auto,auto  # PC Right
 
@@ -27,7 +26,7 @@ workspace=3,monitor:DP-1
 workspace=4,monitor:DP-3, default:true
 workspace=5,monitor:DP-3
 workspace=6,monitor:DP-3
-{{ end }}
+{{- end }}
 
 # Good compromise for 27" or 32" 4K monitors (but fractional!)
 # env = GDK_SCALE,1.75

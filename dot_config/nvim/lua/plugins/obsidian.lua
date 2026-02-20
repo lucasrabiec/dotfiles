@@ -18,7 +18,7 @@ return {
     workspaces = {
       {
         name = "hq",
-        path = "~/Library/Mobile Documents/com~apple~CloudDocs/HQ",
+        path = "~/Sync/obsidian-hq/",
       },
     },
     checkbox = {
