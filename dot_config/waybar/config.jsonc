@@ -88,7 +88,7 @@
   },
   "clock": {
     "locale": "pl_PL.UTF-8",
-    "format": "   {:L%H:%M      %e %b %Y, %A}",
+    "format": "   {:L%H:%M       %e %b %Y, %A}",
     // "format-alt": "{:L%d %B W%V %Y}",
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
