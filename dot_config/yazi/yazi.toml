@@ -1,0 +1,14 @@
+"$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
+
+[preview]
+show_hidden = true
+
+[opener]
+image = [
+    { run = 'satty --filename "$@"', orphan = true }
+]
+
+[open]
+rules = [
+    { mime = "image/*", use = "image" }
+]

@@ -19,7 +19,6 @@
     - [zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH#install-and-set-up-zsh-as-default)
     - zsh theme - [dracula](https://draculatheme.com/zsh) is the best
     - [age](https://github.com/FiloSottile/age) - for chezmoi encryption.
-    - nvm - node version manager
 1. Save ssh keys for current session
     Open `nvim ~/.ssh/config` and save this:
 
@@ -45,6 +44,7 @@
     - Install languages and tools through Omarchy's `Install > Development` menu except python
     - For python versioning and venvs use `uv` (installed via `mise` or Arch repo)
     - NodeJS should be managed by `mise`
+1. Run the `abrakadabra.sh` script to remove unnecessary apps/packages and install the required ones
 
 ## 🛫 Insert before flight
 
@@ -54,13 +54,9 @@
 <br/>
 **("You must gather your party before venturing forth")**
 
-- [lsd](https://github.com/lsd-rs/lsd) - Next gen ls command.
-- [hyprsession](https://github.com/joshurtree/hyprsession) - Session saver for Hyprland 
-- [ghostty](https://ghostty.org/docs) - terminal emulator
-- [rclone](https://rclone.org/) - syncing files to cloud storage
-    - mount needed drives
-- [Android Studio](https://developer.android.com/studio) - IDE for Android Apps
-- Fira Code font (`Install > Style > Font`)
+- ghostty - terminal emulator (`Install > Terminal > Ghostty`)
+- FiraCode Font (`Install > Style > Font`)
+- Android Studio - IDE for Android Apps
 
 
 ## Web Apps (Omarchy only)
