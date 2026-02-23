@@ -1,3 +1,3 @@
 #!/bin/sh
 
-yay -S --noconfirm --needed yazi-git
+yay -S --noconfirm --needed yazi

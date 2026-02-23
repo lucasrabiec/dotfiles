@@ -30,8 +30,6 @@ keybind = super+control+shift+alt+arrow_up=resize_split:up,100
 keybind = super+control+shift+alt+arrow_left=resize_split:left,100
 keybind = super+control+shift+alt+arrow_right=resize_split:right,100
 
-keybind = control+u=scroll_page_lines:-10
-keybind = control+d=scroll_page_lines:10
 keybind = control+alt+u=scroll_page_up
 keybind = control+alt+d=scroll_page_down
 
