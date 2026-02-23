@@ -27,3 +27,6 @@ cdwc() { cd ~/Work/$1 ; }
 
 # Other
 alias lg='lazygit'
+
+# Cal
+alias cal='cal -m' # Monday as first day
