@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 . ./remove-webapps.sh
 . ./remove-xournalpp.sh
