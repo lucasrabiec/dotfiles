@@ -18,6 +18,7 @@
   cma = commit --amend
   cms = log --branches --not --remotes --decorate --oneline
   dt = difftool --dir-diff
+  df = diff
   fe = fetch
   fep = fetch -p
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
@@ -42,6 +43,9 @@
   editor = nvim
   excludesfile = .gitignore
   pager = diff-so-fancy | less --tabs=4 -RFX
+[push]
+  default = current
+  autoSetupRemote = true
 [pull]
   ff = true
   rebase = true
