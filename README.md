@@ -1,6 +1,6 @@
 # dotfiles (🐧 Omarchy, 🍎 MacOS)
 
-![Wallpaper](https://raw.githubusercontent.com/basecamp/omarchy/refs/heads/master/themes/tokyo-night/backgrounds/1-scenery-pink-lakeside-sunset-lake-landscape-scenic-panorama-7680x3215-144.png)
+![Wallpaper](https://raw.githubusercontent.com/lucasrabiec/dotfiles/refs/heads/main/dot_config/omarchy/themes/dracula/backgrounds/sunset-lake.png)
 
 ## 📀 OS Download
 

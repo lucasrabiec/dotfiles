@@ -30,3 +30,9 @@ alias lg='lazygit'
 
 # Cal
 alias cal='cal -m' # Monday as first day
+
+# Yazi
+alias y='yazi'
+
+# Tmux
+alias t='tmux'

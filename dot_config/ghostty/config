@@ -37,3 +37,6 @@ keybind = control+alt+d=scroll_page_down
 mouse-scroll-multiplier = 0.95
 
 theme = dracula
+
+# Fix general slowness on hyprland (https://github.com/ghostty-org/ghostty/discussions/3224)
+async-backend = epoll
