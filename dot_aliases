@@ -7,7 +7,7 @@ alias l='ls --group-dirs=first'
 alias la='ls -a --group-dirs=first'
 alias ll='ls -l --group-dirs=first'
 alias lla='ls -la --group-dirs=first'
-alias lt='ls --tree'
+alias lt='ls --tree --group-dirs first --depth=2 2>/dev/null'
 
 # Git
 alias gac='git add . && git commit'
@@ -25,14 +25,20 @@ alias gsu='git submodule update --remote'
 alias cdw='cd ~/Work/'
 cdwc() { cd ~/Work/$1 ; }
 
-# Other
-alias lg='lazygit'
+# Directories
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 
 # Cal
 alias cal='cal -m' # Monday as first day
 
-# Yazi
-alias y='yazi'
+# Tools
+alias c='opencode'
+alias cx='printf "\033[2J\033[3J\033[H" && claude --allow-dangerously-skip-permissions'
+alias d='docker'
+alias r='rails'
+alias t='tmux attach || tmux new -s Work'
+n() { if [ "$#" -eq 0 ]; then command nvim . ; else command nvim "$@"; fi; }
+alias lg='lazygit'
 
-# Tmux
-alias t='tmux'
