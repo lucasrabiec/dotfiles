@@ -5,10 +5,35 @@ show_hidden = true
 
 [opener]
 image = [
-    { run = 'satty --filename "$@"', orphan = true }
+  { run = 'satty --filename "$@"', orphan = true }
+]
+libreoffice = [
+  { run = "libreoffice %s", orphan = true }
 ]
 
 [open]
-rules = [
-    { mime = "image/*", use = "image" }
+prepend_rules = [
+  # Images
+  { mime = "image/*", use = "image" },
+
+  # Office Documents
+  { url = "*.{doc,docx,docm,dot,dotx,xls,xlsx,xlsm,xlt,xltx,ppt,pptx,pptm,pot,potx}", use = "libreoffice" },
+]
+
+[plugin]
+prepend_preloaders = [
+  # Office Documents
+  { mime = "application/openxmlformats-officedocument.*", run = "office" },
+  { mime = "application/oasis.opendocument.*", run = "office" },
+  { mime = "application/ms-*", run = "office" },
+  { mime = "application/msword", run = "office" },
+  { name = "*.docx", run = "office" },
+]
+prepend_previewers = [
+  # Office Documents
+  { mime = "application/openxmlformats-officedocument.*", run = "office" },
+  { mime = "application/oasis.opendocument.*", run = "office" },
+  { mime = "application/ms-*", run = "office" },
+  { mime = "application/msword", run = "office" },
+  { name = "*.docx", run = "office" },
 ]
