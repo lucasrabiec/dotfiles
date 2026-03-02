@@ -5,7 +5,7 @@ return {
   end,
   opts = {
     filetypes = { "*" },
-    user_default_options = {
+    options = {
       RGB = true, -- #RGB hex codes
       RRGGBB = true, -- #RRGGBB hex codes
       names = false, -- "Name" codes like Blue or blue
