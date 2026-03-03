@@ -13,6 +13,10 @@ window-padding-y = 14
 confirm-close-surface=false
 resize-overlay = never
 gtk-toolbar-style = flat
+gtk-wide-tabs = false
+
+# Tabs CSS
+gtk-custom-css = tab-style.css
 
 # Cursor styling
 cursor-style = "block"
@@ -34,8 +38,12 @@ keybind = super+control+shift+alt+arrow_up=resize_split:up,100
 keybind = super+control+shift+alt+arrow_left=resize_split:left,100
 keybind = super+control+shift+alt+arrow_right=resize_split:right,100
 
+# Scrolling
 keybind = control+alt+u=scroll_page_up
 keybind = control+alt+d=scroll_page_down
+
+# Tabs
+keybind = control+alt+c=new_tab
 
 # Slowdown mouse scrolling
 mouse-scroll-multiplier = 0.95
