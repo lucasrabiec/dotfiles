@@ -15,6 +15,9 @@ resize-overlay = never
 gtk-toolbar-style = flat
 gtk-wide-tabs = false
 
+# Panes / Splits
+unfocused-split-opacity = 0.4
+
 # Tabs CSS
 gtk-custom-css = tab-style.css
 
