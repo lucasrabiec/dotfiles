@@ -12,13 +12,13 @@ window-padding-x = 14
 window-padding-y = 14
 confirm-close-surface=false
 resize-overlay = never
-gtk-toolbar-style = flat
-gtk-wide-tabs = false
 
 # Panes / Splits
-unfocused-split-opacity = 0.4
+unfocused-split-opacity = 0.5
 
-# Tabs CSS
+# Tabs styling
+gtk-toolbar-style = flat
+gtk-wide-tabs = false
 gtk-custom-css = tab-style.css
 
 # Cursor styling
@@ -30,27 +30,40 @@ cursor-style-blink = false
 shell-integration-features = no-cursor,ssh-env
 
 # Keyboard bindings
-# Unbind defaults
+## Unbind defaults
 keybind = control+shift+alt+j=unbind
 
 # Custom bindings
+## Clipboard
 keybind = shift+insert=paste_from_clipboard
 keybind = control+insert=copy_to_clipboard
-keybind = super+control+shift+alt+arrow_down=resize_split:down,100
-keybind = super+control+shift+alt+arrow_up=resize_split:up,100
-keybind = super+control+shift+alt+arrow_left=resize_split:left,100
-keybind = super+control+shift+alt+arrow_right=resize_split:right,100
 
-# Scrolling
+## Scrolling
 keybind = control+alt+u=scroll_page_up
 keybind = control+alt+d=scroll_page_down
 
-# Tabs
+## Splits
+keybind = control+shift+alt+arrow_down=resize_split:down,100
+keybind = control+shift+alt+arrow_up=resize_split:up,100
+keybind = control+shift+alt+arrow_left=resize_split:left,100
+keybind = control+shift+alt+arrow_right=resize_split:right,100
+keybind = control+alt+j=goto_split:down
+keybind = control+alt+k=goto_split:up
+keybind = control+alt+h=goto_split:left
+keybind = control+alt+l=goto_split:right
+
+## Tabs
 keybind = control+alt+c=new_tab
+keybind = control+shift+alt+h=previous_tab
+keybind = control+shift+alt+l=next_tab
+
+## Surface
+keybind = control+alt+w=close_surface
 
 # Slowdown mouse scrolling
 mouse-scroll-multiplier = 0.95
 
+# Theme
 theme = dracula
 
 # Fix general slowness on hyprland (https://github.com/ghostty-org/ghostty/discussions/3224)

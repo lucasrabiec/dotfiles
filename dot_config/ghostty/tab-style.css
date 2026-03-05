@@ -6,7 +6,7 @@ https://docs.gtk.org/gtk4/css-properties.html
 
 
 headerbar {
-  min-height: 24px;
+  min-height: 10px;
   padding: 0;
   margin: 0;
 }
@@ -23,6 +23,13 @@ tabbar tabbox tab {
   margin: 0;
   padding: 0;
   color: #9ca3af;
+  border-radius: 0;
+}
+
+tabbar tabbox tabboxchild {
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
 }
 
 tabbar tabbox tab:selected {
