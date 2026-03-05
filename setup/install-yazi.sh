@@ -3,15 +3,23 @@
 yay -S --noconfirm --needed yazi
 
 pkg_file="$HOME/.config/yazi/package.toml"
-plugin_office='macydnah/office'
+plugins=(
+  "macydnah/office"
+  "yazi-rs/plugins:full-border"
+  "yazi-rs/plugins:git"
+  "yazi-rs/plugins:smart-enter"
+  "yazi-rs/plugins:chmod"
+)
 
-if [[ ! -f "$pkg_file" ]]; then
-  ya pkg add "$plugin_office"
-  exit 0
-fi
+for plugin in "${plugins[@]}"; do
+  if [[ ! -f "$pkg_file" ]]; then
+    ya pkg add "$plugin"
+    continue
+  fi
 
-if grep -Fq "use = \"$plugin_office\"" "$pkg_file"; then
-  echo "Plugin $plugin_office already present in $pkg_file — skipping"
-else
-  ya pkg add "$plugin_office"
-fi
+  if grep -Fq "use = \"$plugin\"" "$pkg_file"; then
+    echo "Plugin $plugin already present in $pkg_file — skipping"
+  else
+    ya pkg add "$plugin"
+  fi
+done
