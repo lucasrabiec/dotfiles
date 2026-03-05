@@ -13,4 +13,4 @@ SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 . "$SCRIPT_DIR/install-tmux-plugin-manager.sh"
 
 # TMP
-. "$SCRIPT_DIR/install-kitty.sh"
+# . "$SCRIPT_DIR/install-kitty.sh"
