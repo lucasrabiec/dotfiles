@@ -14,7 +14,7 @@ confirm-close-surface=false
 resize-overlay = never
 
 # Panes / Splits
-unfocused-split-opacity = 0.5
+unfocused-split-opacity = 0.55
 
 # Tabs styling
 gtk-toolbar-style = flat
@@ -31,7 +31,7 @@ shell-integration-features = no-cursor,ssh-env
 
 # Keyboard bindings
 ## Unbind defaults
-keybind = control+shift+alt+j=unbind
+keybind = control+shift+alt+j=unbind # for Tmux navigation between sessions
 
 # Custom bindings
 ## Clipboard
@@ -43,22 +43,21 @@ keybind = control+alt+u=scroll_page_up
 keybind = control+alt+d=scroll_page_down
 
 ## Splits
-keybind = control+shift+alt+arrow_down=resize_split:down,100
-keybind = control+shift+alt+arrow_up=resize_split:up,100
-keybind = control+shift+alt+arrow_left=resize_split:left,100
-keybind = control+shift+alt+arrow_right=resize_split:right,100
-keybind = control+alt+j=goto_split:down
-keybind = control+alt+k=goto_split:up
-keybind = control+alt+h=goto_split:left
-keybind = control+alt+l=goto_split:right
+keybind = control+shift+alt+j=resize_split:down,100
+keybind = control+shift+alt+k=resize_split:up,100
+keybind = control+shift+alt+h=resize_split:left,100
+keybind = control+shift+alt+l=resize_split:right,100
+keybind = control+shift+j=goto_split:down
+keybind = control+shift+k=goto_split:up
+keybind = control+shift+h=goto_split:left
+keybind = control+shift+l=goto_split:right
 
 ## Tabs
-keybind = control+alt+c=new_tab
-keybind = control+shift+alt+h=previous_tab
-keybind = control+shift+alt+l=next_tab
+keybind = control+shift+alt+[=previous_tab
+keybind = control+shift+alt+]=next_tab
 
 ## Surface
-keybind = control+alt+w=close_surface
+keybind = control+shift+c=close_surface
 
 # Slowdown mouse scrolling
 mouse-scroll-multiplier = 0.95
