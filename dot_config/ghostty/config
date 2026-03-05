@@ -31,7 +31,8 @@ shell-integration-features = no-cursor,ssh-env
 
 # Keyboard bindings
 ## Unbind defaults
-keybind = control+shift+alt+j=unbind # for Tmux navigation between sessions
+# for Tmux navigation between sessions
+keybind = control+shift+alt+j=unbind 
 
 # Custom bindings
 ## Clipboard
@@ -43,10 +44,10 @@ keybind = control+alt+u=scroll_page_up
 keybind = control+alt+d=scroll_page_down
 
 ## Splits
-keybind = control+shift+alt+j=resize_split:down,100
-keybind = control+shift+alt+k=resize_split:up,100
-keybind = control+shift+alt+h=resize_split:left,100
-keybind = control+shift+alt+l=resize_split:right,100
+keybind = super+control+shift+j=resize_split:down,100
+keybind = super+control+shift+k=resize_split:up,100
+keybind = super+control+shift+h=resize_split:left,100
+keybind = super+control+shift+l=resize_split:right,100
 keybind = control+shift+j=goto_split:down
 keybind = control+shift+k=goto_split:up
 keybind = control+shift+h=goto_split:left
