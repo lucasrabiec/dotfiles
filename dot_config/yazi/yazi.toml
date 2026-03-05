@@ -3,6 +3,9 @@
 [preview]
 show_hidden = true
 
+[mgr]
+linemode = "size"
+
 [opener]
 image = [
   { run = 'satty --filename "$@"', orphan = true }
@@ -36,4 +39,7 @@ prepend_previewers = [
   { mime = "application/ms-*", run = "office" },
   { mime = "application/msword", run = "office" },
   { name = "*.docx", run = "office" },
+]
+prepend_spotters = [
+  { url = "*", run = "file-extra-metadata" },
 ]

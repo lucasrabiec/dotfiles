@@ -4,11 +4,13 @@ yay -S --noconfirm --needed yazi
 
 pkg_file="$HOME/.config/yazi/package.toml"
 plugins=(
-  "macydnah/office"
   "yazi-rs/plugins:full-border"
   "yazi-rs/plugins:git"
   "yazi-rs/plugins:smart-enter"
   "yazi-rs/plugins:chmod"
+  "yazi-rs/flavors:dracula"
+  "macydnah/office"
+  "boydaihungst/file-extra-metadata"
 )
 
 for plugin in "${plugins[@]}"; do
@@ -18,7 +20,7 @@ for plugin in "${plugins[@]}"; do
   fi
 
   if grep -Fq "use = \"$plugin\"" "$pkg_file"; then
-    echo "Plugin $plugin already present in $pkg_file — skipping"
+    echo "Plugin $plugin already present — skipping"
   else
     ya pkg add "$plugin"
   fi
