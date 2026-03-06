@@ -2,6 +2,7 @@
 
 [preview]
 show_hidden = true
+max_width = 550
 
 [mgr]
 linemode = "size"
