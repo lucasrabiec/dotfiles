@@ -12,9 +12,9 @@ For MacOS configuration click [here](https://rickrolled.com/?title=Download+MacO
 
 ![Piotr Fronczewski](https://static.prsa.pl/images/a27d63a8-3495-4f29-ac70-62f97e40def8.file?format=400)
 <br/>
-<strong>"Przed wyruszeniem w drogę należy zebrać drużynę<sup>1</sup>"</strong>
+**"Przed wyruszeniem w drogę należy zebrać drużynę"**
 <br/>
-**("You must gather your party before venturing forth")**
+<strong>("You must gather your party before venturing forth")<sup>1</sup></strong>
 
 1. Configure Limine
    1. Disable Secure Boot in BIOS and install Omarchy
@@ -38,9 +38,9 @@ For MacOS configuration click [here](https://rickrolled.com/?title=Download+MacO
 1. Add locale and apply waybar config
    1. Open `sudo nvim /etc/locale.gen` and uncomment `pl.PL.utf8` then save
    1. Call `sudo locale-gen`
-   1. Apply Waybar config with `killall waybar && waybar &`
+   1. Apply Waybar config with `omarchy-restart-waybar`
 1. Clear preconfigured omarchy's nvim to apply clean config from chezmoi
-   1. Remove omarchy-nvim package
+   1. Remove `omarchy-nvim` package
    1. Remove nvim from `~/.local/share/` and `~/.config/`
 1. Install chezmoi and init with this repo url.
 1. Configure zsh
