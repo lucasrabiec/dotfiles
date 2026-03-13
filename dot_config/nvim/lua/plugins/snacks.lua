@@ -56,6 +56,16 @@ return {
         { section = "startup" },
       },
     },
+    image = {
+      resolve = function(path, src)
+        local api = require("obsidian.api")
+        if api.path_is_note(path) then
+          return api.resolve_image_path(src)
+        else
+          return path
+        end
+      end,
+    },
   },
   keys = {
     { "<leader>fe", false },

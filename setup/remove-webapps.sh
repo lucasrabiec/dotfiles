@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-APP_NAMES=("Alacritty" "Basecamp" "Dropbox" "Google Contacts" "Google Messages" "Google Photos" "Hey" "imv" "typora" "Zoom")
+APP_NAMES=("Alacritty" "Basecamp" "Discord" "Dropbox" "Google Contacts" "Google Messages" "Google Photos" "Hey" "imv" "typora" "Zoom")
 
 ICON_DIR="$HOME/.local/share/applications/icons"
 DESKTOP_DIR="$HOME/.local/share/applications"

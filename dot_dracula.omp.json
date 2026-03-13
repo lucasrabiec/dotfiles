@@ -75,9 +75,7 @@
           "background": "#000000",
           "type": "status",
           "style": "powerline",
-          "foreground_templates": [
-            "{{ if gt .Code 0 }}p:red{{ end }}"
-          ],
+          "foreground_templates": ["{{ if gt .Code 0 }}p:red{{ end }}"],
           "invert_powerline": true
         },
         {
@@ -231,8 +229,8 @@
           },
           "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue7dd ",
           "powerline_symbol": "\ue0b2",
-          "foreground": "p:cyan",
-          "background": "p:background",
+          "foreground": "p:background",
+          "background": "p:cyan",
           "type": "flutter",
           "style": "powerline",
           "invert_powerline": true
@@ -243,8 +241,8 @@
           },
           "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue7ba ",
           "powerline_symbol": "\ue0b2",
-          "foreground": "p:cyan",
-          "background": "p:background",
+          "foreground": "p:background",
+          "background": "p:cyan",
           "type": "react",
           "style": "powerline",
           "invert_powerline": true
@@ -270,9 +268,7 @@
           },
           "template": "\u276f",
           "foreground": "p:green",
-          "foreground_templates": [
-            "{{ if gt .Code 0 }}p:red{{ end }}"
-          ],
+          "foreground_templates": ["{{ if gt .Code 0 }}p:red{{ end }}"],
           "type": "text",
           "style": "plain"
         }

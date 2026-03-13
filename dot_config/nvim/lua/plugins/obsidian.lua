@@ -1,6 +1,9 @@
+---@module 'obsidian'
+---@type obsidian.config
+
 return {
   "obsidian-nvim/obsidian.nvim",
-  version = "*", -- recommended, use latest release instead of latest commit
+  -- version = "*", -- recommended, use latest release instead of latest commit
   cmd = "Obsidian",
   lazy = true,
   -- ft = "markdown",
@@ -12,9 +15,8 @@ return {
   --   "BufReadPre path/to/my-vault/*.md",
   --   "BufNewFile path/to/my-vault/*.md",
   -- },
-  ---@module 'obsidian'
-  ---@type obsidian.config
   opts = {
+    legacy_commands = false,
     workspaces = {
       {
         name = "hq",
@@ -24,13 +26,17 @@ return {
     checkbox = {
       order = { " ", "x" },
     },
+    attachments = {
+      folder = " ",
+    },
   },
   keys = function()
     local wk = require("which-key")
     wk.add({
       { "<leader>o", "", desc = "+Obsidian", icon = { icon = " ", color = "purple" } },
       { "<leader>oo", "<cmd>Obsidian<cr>", desc = "Menu" },
-      { "<leader>oO", "<cmd>ObsidianOpen<cr>", desc = "Open Obsidian" },
+      { "<leader>oO", "<cmd>Obsidian open<cr>", desc = "Open Obsidian" },
+      { "<leader>oq", "<cmd>Obsidian quick_switch<cr>", desc = "Quick switch" },
     })
   end,
 }

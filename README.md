@@ -10,7 +10,7 @@ For MacOS configuration click [here](https://rickrolled.com/?title=Download+MacO
 
 ## ⚔️ Brace yourself
 
-![Piotr Fronczewski](https://static.prsa.pl/images/a27d63a8-3495-4f29-ac70-62f97e40def8.file?format=400)
+<img width="400" src="https://static.prsa.pl/images/a27d63a8-3495-4f29-ac70-62f97e40def8.file" />
 <br/>
 **"Przed wyruszeniem w drogę należy zebrać drużynę"**
 <br/>
