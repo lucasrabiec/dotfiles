@@ -9,10 +9,17 @@ install_font() {
   local pkg="$2"
   local font="$3"
 
+  current_font="$("$OM_BIN/omarchy-font-current" || true)"
+
+  if [[ "$current_font" == "$font" ]]; then
+    echo "${label} is already the current font. Skipping installation."
+    return
+  fi
+
   echo "Installing ${label}..."
   "$OM_BIN/omarchy-pkg-add" "$pkg"
   sleep 1
   "$OM_BIN/omarchy-font-set" "$font"
 }
 
-install_font "JetBrains Mono" "ttf-jetbrains-mono-nerd" "JetBrainsMono Nerd Font"
+install_font "Fira Code" "ttf-firacode-nerd" "FiraCode Nerd Font"
