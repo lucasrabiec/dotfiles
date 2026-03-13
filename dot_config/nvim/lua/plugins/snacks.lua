@@ -19,8 +19,16 @@ return {
     scroll = {
       enabled = false, -- disable scrolling animations
     },
-    explorer = {
-      enabled = false,
+    picker = {
+      sources = {
+        explorer = {
+          auto_close = true,
+          layout = {
+            preset = "select",
+            preview = true,
+          },
+        },
+      },
     },
     dashboard = {
       formats = {
@@ -66,9 +74,5 @@ return {
         end
       end,
     },
-  },
-  keys = {
-    { "<leader>fe", false },
-    { "<leader>e", false },
   },
 }
