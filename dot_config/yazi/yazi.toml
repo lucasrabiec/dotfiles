@@ -2,10 +2,15 @@
 
 [preview]
 show_hidden = true
-max_width = 550
+image_filter = "triangle"
+image_quality = 70
+max_width = 1000
+max_height = 1000
+image_delay = 100
 
 [mgr]
 linemode = "size"
+preload_max_depth = 1
 
 [opener]
 image = [

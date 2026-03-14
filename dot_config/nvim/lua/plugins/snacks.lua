@@ -19,13 +19,41 @@ return {
     scroll = {
       enabled = false, -- disable scrolling animations
     },
+    explorer = {
+      enabled = false,
+      replace_netrw = true,
+    },
     picker = {
       sources = {
         explorer = {
+          tree = false,
           auto_close = true,
+          jump = { close = true },
           layout = {
-            preset = "select",
+            preset = "default",
             preview = true,
+            layout = {
+              box = "horizontal",
+              width = 0.8,
+              min_width = 80,
+              max_width = 140,
+              height = 0.5,
+              {
+                box = "vertical",
+                border = true,
+                title = "{title} {live} {flags}",
+                { win = "input", height = 1, border = "bottom" },
+                { win = "list", border = "none" },
+              },
+              { win = "preview", title = "{preview}", border = true, width = 0.6 },
+            },
+          },
+          win = {
+            list = {
+              keys = {
+                ["h"] = "explorer_up",
+              },
+            },
           },
         },
       },
@@ -74,5 +102,15 @@ return {
         end
       end,
     },
+  },
+  keys = {
+    {
+      "<leader>fe",
+      function()
+        Snacks.explorer({ cwd = vim.fn.expand("%:p:h") })
+      end,
+      desc = "Explorer (current file)",
+    },
+    { "<leader>e", "<leader>fe", desc = "Explorer (current file)", remap = true },
   },
 }
