@@ -114,7 +114,6 @@ plugins=(
   gitignore
   golang
   rclone
-  ssh-agent
   uv
   zsh-interactive-cd
 )

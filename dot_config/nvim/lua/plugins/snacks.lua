@@ -20,13 +20,12 @@ return {
       enabled = false, -- disable scrolling animations
     },
     explorer = {
-      enabled = false,
-      replace_netrw = true,
+      enabled = true,
     },
     picker = {
       sources = {
         explorer = {
-          tree = false,
+          tree = true,
           auto_close = true,
           jump = { close = true },
           layout = {
@@ -104,6 +103,8 @@ return {
     },
   },
   keys = {
+    -- { "<leader>e", false },
+    -- { "<leader>fe", false },
     {
       "<leader>fe",
       function()

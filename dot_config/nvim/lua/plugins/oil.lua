@@ -1,12 +1,19 @@
 local detail = false
+---@module 'oil'
+---@type oil.SetupOpts
 return {
   -- "stevearc/oil.nvim",
-  -- ---@module 'oil'
-  -- ---@type oil.SetupOpts
+  -- lazy = false,
   -- keys = {
   --   {
   --     "<leader>e",
-  --     "<cmd>Oil --float<cr>",
+  --     function()
+  --       if vim.w.is_oil_win then
+  --         require("oil").close()
+  --       else
+  --         require("oil").open_float(nil, { preview = {} })
+  --       end
+  --     end,
   --     desc = "Open file explorer",
   --   },
   -- },
@@ -28,25 +35,39 @@ return {
   --       return true
   --     end,
   --   },
+  --   win_options = {
+  --     signcolumn = "yes:2",
+  --   },
   --   float = {
   --     -- Padding around the floating window
   --     padding = 2,
-  --     max_width = 170,
-  --     max_height = 40,
+  --     max_width = 140,
+  --     max_height = 30,
   --     border = "rounded",
   --     win_options = {
   --       winblend = 0,
   --     },
   --     -- preview_split: Split direction: "auto", "left", "right", "above", "below".
-  --     preview_split = "auto",
+  --     preview_split = "right",
   --     -- This is the config that will be passed to nvim_open_win.
   --     -- Change values here to customize the layout
   --     override = function(conf)
   --       return conf
   --     end,
   --   },
+  --   preview_win = {
+  --     -- Whether the preview window is automatically updated when the cursor is moved
+  --     update_on_cursor_moved = true,
+  --     -- How to open the preview window "load"|"scratch"|"fast_scratch"
+  --     preview_method = "fast_scratch",
+  --     -- A function that returns true to disable preview on a file e.g. to avoid lag
+  --     disable_preview = function(filename)
+  --       return false
+  --     end,
+  --     -- Window-local options to use for preview window buffers
+  --     win_options = {},
+  --   },
   --   keymaps = {
-  --     [";"] = { "actions.parent", mode = "n" },
   --     ["<C-s>"] = {
   --       desc = "Save changes",
   --       callback = function()
@@ -72,7 +93,9 @@ return {
   --         end
   --       end,
   --     },
-  --     ["<C-h"] = false,
+  --     -- [";"] = { "actions.parent", mode = "n" },
+  --     ["h"] = { "actions.parent", mode = "n" },
+  --     ["l"] = { "actions.select", mode = "n" },
   --     ["<C-h>"] = { "actions.select", opts = { horizontal = true }, desc = "Open the entry in a horizontal split" },
   --     ["<C-v>"] = { "actions.select", opts = { vertical = true }, desc = "Open the entry in a vertical split" },
   --   },
@@ -82,5 +105,23 @@ return {
   --     end,
   --   },
   -- },
+  -- config = function(_, opts)
+  --   require("oil").setup(opts)
+  --
+  --   local augroup = vim.api.nvim_create_augroup("OilOpenPreview", { clear = true })
+  --   local is_previewing = false
+  --   -- Autocommand for trigering preview when entering neovim with `nvim .`
+  --   vim.api.nvim_create_autocmd("User", {
+  --     pattern = "OilEnter",
+  --     group = augroup,
+  --     callback = function()
+  --       if is_previewing then
+  --         return
+  --       end
+  --       is_previewing = true
+  --       require("oil").open_preview()
+  --     end,
+  --   })
+  -- end,
   -- dependencies = { { "nvim-mini/mini.icons", opts = {} } },
 }
