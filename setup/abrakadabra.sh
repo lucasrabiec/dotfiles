@@ -2,7 +2,7 @@
 
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 
-. "$SCRIPT_DIR/remove-webapps.sh"
+. "$SCRIPT_DIR/remove-preinstalled.sh"
 
 . "$SCRIPT_DIR/install-7zip.sh"
 . "$SCRIPT_DIR/install-diff-so-fancy.sh"

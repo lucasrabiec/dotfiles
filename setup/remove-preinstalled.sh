@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-APP_NAMES=("Alacritty" "Basecamp" "Discord" "Dropbox" "Google Contacts" "Google Messages" "Google Photos" "Hey" "imv" "typora" "Zoom")
+APP_NAMES=("Alacritty" "Basecamp" "Discord" "Dropbox" "Google Contacts" "Google Messages" "Google Photos" "Hey" "imv" "Zoom")
 
 ICON_DIR="$HOME/.local/share/applications/icons"
 DESKTOP_DIR="$HOME/.local/share/applications"
@@ -22,3 +22,6 @@ for APP in "${APP_NAMES[@]}"; do
     echo "Removed $APP"
   fi
 done
+
+# Remove packages
+yay -Rns --noconfirm typora
