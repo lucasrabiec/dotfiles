@@ -11,8 +11,7 @@ alias lt='ls --tree --group-dirs first --depth=2 2>/dev/null'
 
 # Git
 alias gac='git add . && git commit'
-alias gc='git checkout '
-alias gcm='git checkout main && git pull'
+alias gsm='git switch main && git pull'
 alias gl='git log --oneline --all --graph --decorate $*'
 alias gpl='git pull'
 alias gph='git push'
