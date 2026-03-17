@@ -36,6 +36,11 @@ local function focus_list_if_input_empty(picker)
     return
   end
 
+  -- Only handle this when the explorer itself is focused
+  if not picker:is_focused() then
+    return
+  end
+
   local input_win = picker.input and picker.input.win
   local list_win = picker.list and picker.list.win
 
@@ -261,6 +266,40 @@ return {
               vim.api.nvim_set_current_win(picker.input.win.win)
               vim.cmd("startinsert")
             end,
+            explorer_add_cwd = function(picker)
+              Snacks.input({
+                prompt = 'Add a new file or directory (directories end with a "/")',
+              }, function(value)
+                if not value or value:match("^%s*$") then
+                  return
+                end
+
+                -- Always create relative to current explorer cwd
+                local base = picker:cwd()
+                local path = vim.fs.normalize(base .. "/" .. value)
+
+                local is_file = value:sub(-1) ~= "/"
+                local dir = is_file and vim.fs.dirname(path) or path
+
+                if is_file and vim.uv.fs_stat(path) then
+                  Snacks.notify.warn("File already exists:\n- `" .. path .. "`")
+                  return
+                end
+
+                vim.fn.mkdir(dir, "p")
+
+                if is_file then
+                  local f = io.open(path, "w")
+                  if f then
+                    f:close()
+                  end
+                end
+
+                Tree:open(dir)
+                Tree:refresh(dir)
+                Actions.update(picker, { target = path })
+              end)
+            end,
           },
           win = {
             list = {
@@ -268,6 +307,8 @@ return {
                 ["h"] = "go_left",
                 ["l"] = "go_right",
                 ["i"] = "go_to_input",
+                ["a"] = "explorer_add_cwd",
+                ["A"] = "explorer_add",
               },
             },
           },
