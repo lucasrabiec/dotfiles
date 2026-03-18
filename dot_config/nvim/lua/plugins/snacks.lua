@@ -216,13 +216,13 @@ return {
               Snacks.input({
                 prompt = 'Add a new file or directory (directories end with a "/")',
               }, function(value)
-                if not value or value:match("^%s*$") then
+                if not value or value:find("^%s*$") then
                   return
                 end
 
                 -- Always create relative to current explorer cwd
                 local base = picker:cwd()
-                local path = vim.fs.normalize(base .. "/" .. value)
+                local path = svim.fs.normalize(base .. "/" .. value)
 
                 local is_file = value:sub(-1) ~= "/"
                 local dir = is_file and vim.fs.dirname(path) or path
