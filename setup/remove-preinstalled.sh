@@ -23,5 +23,9 @@ for APP in "${APP_NAMES[@]}"; do
   fi
 done
 
-# Remove packages
-yay -Rns --noconfirm typora
+if pacman -Q typora >/dev/null 2>&1; then
+  echo "Removing typora..."
+  yay -Rns --noconfirm typora
+else
+  echo "typora not installed, skipping"
+fi

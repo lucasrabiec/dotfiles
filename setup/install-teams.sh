@@ -1,3 +1,3 @@
 #!/bin/bash
 
-yay -S --noconfirm --needed teams-for-linux
+yay -S --noconfirm --needed teams-for-linux-bin
