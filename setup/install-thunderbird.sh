@@ -1,3 +1,3 @@
 #!/bin/bash
 
-yay -S --noconfirm --needed thunderbird-bin
+yay -S --noconfirm --needed thunderbird
