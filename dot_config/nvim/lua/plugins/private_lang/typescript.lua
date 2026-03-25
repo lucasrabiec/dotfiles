@@ -1,4 +1,34 @@
 return {
+  "neovim/nvim-lspconfig",
+  opts = {
+    servers = {
+      vtsls = {
+        settings = {
+          typescript = {
+            format = {
+              enable = false,
+            },
+          },
+        },
+      },
+      -- eslint = {
+      --   settings = {
+      --     workingDirectories = { mode = "auto" },
+      --     format = vim.g.lazyvim_eslint_auto_format,
+      --   },
+      -- },
+      -- eslint = {
+      --   on_attach = function(_, bufnr)
+      --     -- vim.api.nvim_create_autocmd({ "BufWritePre", "BufLeave", "WinLeave", "FocusLost" }, {
+      --     vim.api.nvim_create_autocmd({ "BufWritePre", "WinLeave", "FocusLost" }, {
+      --       buffer = bufnr,
+      --       command = "EslintFixAll",
+      --     })
+      --   end,
+      --   -- root_dir = vim.fs.dirname(vim.fs.find(".git", { path = startpath, upward = true })[1]),
+      -- },
+    },
+  },
   -- {
   --   "nvim-treesitter/nvim-treesitter",
   --   opts = function(_, opts)
@@ -50,18 +80,30 @@ return {
   -- {
   --   "neovim/nvim-lspconfig",
   --   opts = {
-  --     servers = {
-  --       eslint = {
-  --         on_attach = function(_, bufnr)
-  --           vim.api.nvim_create_autocmd({ "BufWritePre", "BufLeave", "WinLeave", "FocusLost" }, {
-  --             -- vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-  --             buffer = bufnr,
-  --             command = "EslintFixAll",
-  --           })
-  --         end,
-  --         root_dir = require("lspconfig.util").find_git_ancestor,
-  --       },
+  --     servers = { eslint = {} },
+  --     setup = {
+  --       eslint = function()
+  --         require("snacks.util.lsp").on_attach(function(client)
+  --           if client.name == "eslint" then
+  --             client.server_capabilities.documentFormattingProvider = true
+  --           elseif client.name == "tsserver" then
+  --             client.server_capabilities.documentFormattingProvider = false
+  --           end
+  --         end)
+  --       end,
   --     },
+  --     -- servers = {
+  --     --   eslint = {
+  --     --     on_attach = function(_, bufnr)
+  --     --       vim.api.nvim_create_autocmd({ "BufWritePre", "BufLeave", "WinLeave", "FocusLost" }, {
+  --     --         -- vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  --     --         buffer = bufnr,
+  --     --         command = "EslintFixAll",
+  --     --       })
+  --     --     end,
+  --     --     root_dir = require("lspconfig.util").find_git_ancestor,
+  --     --   },
+  --     -- },
   --   },
   -- },
   -- {

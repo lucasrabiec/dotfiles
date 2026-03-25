@@ -24,8 +24,6 @@ for APP in "${APP_NAMES[@]}"; do
 done
 
 if pacman -Q typora >/dev/null 2>&1; then
-  echo "Removing typora..."
+  echo "Removed typora..."
   yay -Rns --noconfirm typora
-else
-  echo "typora not installed, skipping"
 fi
