@@ -120,7 +120,7 @@
           "template": " {{ if .Unsupported }}\uf071 (unsupported){{ else }}{{ .Full }}{{ end }} \ue77f ",
           "foreground": "p:background",
           "powerline_symbol": "\ue0b2",
-          "background": "p:purple",
+          "background": "p:cyan",
           "type": "dotnet",
           "style": "powerline",
           "invert_powerline": true
@@ -242,7 +242,7 @@
           "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} \ue7ba ",
           "powerline_symbol": "\ue0b2",
           "foreground": "p:background",
-          "background": "p:cyan",
+          "background": "p:purple",
           "type": "react",
           "style": "powerline",
           "invert_powerline": true
