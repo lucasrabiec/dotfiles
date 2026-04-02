@@ -3,7 +3,7 @@ return {
   opts = {
     events = { "BufWritePost" },
     linters_by_ft = {
-      markdown = { "" },
+      markdown = false,
     },
   },
 }

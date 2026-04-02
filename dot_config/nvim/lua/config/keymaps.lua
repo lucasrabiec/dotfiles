@@ -36,20 +36,11 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
--- map("n", "d", '"_d', { noremap = true, silent = true })
--- map("n", "dd", '"_dd', { noremap = true, silent = true })
-
 -- Center on scrolling
 map("n", "<C-u>", "<cmd>lua vim.cmd('normal! <C-u>zz'); MiniAnimate.execute_after('scroll', 'normal! zz')<cr>")
 map("n", "<C-d>", "<cmd>lua vim.cmd('normal! <C-d>zz'); MiniAnimate.execute_after('scroll', 'normal! zz')<cr>")
 map("n", "<C-f>", "<cmd>lua vim.cmd('normal! <C-f>zz'); MiniAnimate.execute_after('scroll', 'normal! zz')<cr>")
 map("n", "<C-b>", "<cmd>lua vim.cmd('normal! <C-b>zz'); MiniAnimate.execute_after('scroll', 'normal! zz')<cr>")
-
--- Map for Tmux
--- map("n", "<C-h>", "<cmd>lua require'tmux'.move_left()<cr>", { desc = "Go to left window" })
--- map("n", "<C-j>", "<cmd>lua require'tmux'.move_bottom()<cr>", { desc = "Go to lower window" })
--- map("n", "<C-k>", "<cmd>lua require'tmux'.move_top()<cr>", { desc = "Go to upper window" })
--- map("n", "<C-l>", "<cmd>lua require'tmux'.move_right()<cr>", { desc = "Go to right window" })
 
 -- Other
 

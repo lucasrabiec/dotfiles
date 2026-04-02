@@ -1,15 +1,10 @@
 return {
   "nvim-mini/mini.indentscope",
-  version = false,
-  enabled = false,
+  enabled = true,
   opts = {
     draw = {
       delay = 0,
-      animation = function()
-        return function()
-          return 0
-        end
-      end,
+      animation = require("mini.indentscope").gen_animation.none(),
     },
   },
 }
