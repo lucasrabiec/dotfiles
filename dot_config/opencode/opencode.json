@@ -3,6 +3,12 @@
   "autoupdate": false,
   "permission": {
     "edit": "ask",
-    "bash": "ask"
+    "bash": {
+      "*": "ask",
+      "git *": "ask",
+      "npm *": "ask",
+      "rm *": "ask",
+      "grep *": "allow"
+    }
   }
 }
