@@ -15,3 +15,5 @@ vim.g.snacks_animate = false
 
 -- Set to false to disable auto format
 vim.g.lazyvim_eslint_auto_format = true
+vim.g.lazyvim_python_lsp = "basedpyright"
+vim.g.lazyvim_python_ruff = "ruff"
