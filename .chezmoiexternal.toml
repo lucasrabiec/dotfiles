@@ -1,0 +1,7 @@
+[".config/nvim"]
+type = "git-repo"
+url = "git@github.com:lucasrabiec/nvim.git"
+refreshPeriod = "24h"
+
+[".config/nvim".pull]
+args = ["--ff-only"]
