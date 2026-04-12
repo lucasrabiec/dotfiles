@@ -167,3 +167,19 @@ function y() {
 }
 
 source ~/.tmux-layouts.sh
+
+# nvim management command
+nvim() {
+  case "$1" in
+    cd)
+      cd ~/.config/nvim || return
+      ;;
+    git)
+      shift
+      git -C ~/.config/nvim "$@"
+      ;;
+    *)
+      command nvim "$@"
+      ;;
+  esac
+}
