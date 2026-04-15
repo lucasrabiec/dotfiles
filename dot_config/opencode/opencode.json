@@ -8,7 +8,10 @@
       "git *": "ask",
       "npm *": "ask",
       "rm *": "ask",
-      "grep *": "allow"
+      "grep *": "allow",
+      "find *": "allow",
+      "head *": "allow",
+      "ls *": "allow"
     }
   }
 }
