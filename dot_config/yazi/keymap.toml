@@ -1,6 +1,7 @@
 [mgr]
 prepend_keymap = [
   { on = "<Enter>", run = "plugin smart-enter", "Enter the child directory, or open the file"},
-  { on = ["c", "m"], run = "plugin chmod", "Chmod on selected files"}
+  { on = ["c", "m"], run = "plugin chmod", "Chmod on selected files"},
+  { on = "q", run = "quit --no-cwd-file", desc = "Quit without changing cwd"},
+  { on = "Q", run = "quit", desc = "Quit and output cwd" }
 ]
-

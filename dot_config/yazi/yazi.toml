@@ -2,11 +2,7 @@
 
 [preview]
 show_hidden = true
-image_filter = "triangle"
-image_quality = 70
-max_width = 1000
-max_height = 1000
-image_delay = 100
+max_width = 500
 
 [mgr]
 linemode = "size"
