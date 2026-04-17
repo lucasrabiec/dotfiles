@@ -11,7 +11,8 @@
       "grep *": "allow",
       "find *": "allow",
       "head *": "allow",
-      "ls *": "allow"
+      "ls *": "allow",
+      "cat *": "allow"
     }
   }
 }
