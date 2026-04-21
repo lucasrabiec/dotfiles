@@ -1,0 +1,9 @@
+[tools]
+cargo = "latest"
+dotnet = "latest"
+go = "latest"
+java = "latest"
+node = "latest"
+rust = "latest"
+usage = "latest"
+uv = "latest"
