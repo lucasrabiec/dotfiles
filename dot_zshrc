@@ -104,6 +104,7 @@ ZSH_THEME="dracula"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  autoenv
   aws
   chezmoi
   colored-man-pages

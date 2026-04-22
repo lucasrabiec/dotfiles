@@ -1,9 +1,9 @@
 [tools]
 cargo = "latest"
-dotnet = "latest"
+dotnet = "10"
 go = "latest"
 java = "latest"
-node = "latest"
+node = "25"
 rust = "latest"
 usage = "latest"
 uv = "latest"
