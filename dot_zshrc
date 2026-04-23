@@ -43,10 +43,11 @@ zstyle ':zephyr:plugin:editor' 'symmetric-ctrl-z' yes
 # load plugins
 source ${zsh_plugins}.zsh
 
-# zsh keybinds
+# zsh keybinds and plugins settings
 bindkey '^I' expand-or-complete       # Tab
 bindkey '^[[Z' reverse-menu-complete  # Shift+Tab
 bindkey '^Xa' glob-alias              # expand alias on <Ctrl + x, a>
+export ZVM_SYSTEM_CLIPBOARD_ENABLED=true
 
 # Oh My Posh
 eval "$(oh-my-posh init zsh --config $HOME/.dracula.omp.json)"
@@ -107,3 +108,4 @@ nvim() {
       ;;
   esac
 }
+
