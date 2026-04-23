@@ -1,0 +1,18 @@
+getantidote/use-omz
+ohmyzsh/ohmyzsh path:plugins/colored-man-pages
+ohmyzsh/ohmyzsh path:plugins/gitignore
+
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-syntax-highlighting
+
+mattmc3/zephyr path:plugins/color
+mattmc3/zephyr path:plugins/completion
+mattmc3/zephyr path:plugins/compstyle
+mattmc3/zephyr path:plugins/directory
+mattmc3/zephyr path:plugins/editor
+mattmc3/zephyr path:plugins/environment
+mattmc3/zephyr path:plugins/history
+mattmc3/zephyr path:plugins/utility
+mattmc3/zephyr path:plugins/zfunctions
+
+MichaelAquilina/zsh-autoswitch-virtualenv

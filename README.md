@@ -44,10 +44,8 @@ For MacOS configuration click [here](https://rickrolled.com/?title=Download+MacO
    1. Remove nvim from `~/.local/share/` and `~/.config/`
 1. Install chezmoi and init with this repo url.
 1. Configure zsh
-   - Install [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh) - a delightful community-driven framework for managing zsh configuration.
    - Install [oh-my-posh](https://ohmyposh.dev) - the most customizable and fastest prompt engine for any shell.
      - `eval "$(oh-my-posh init zsh --config ~/.dracula.omp.json)"`
-   - Install [zsh-autosuggestions]() and [zsh-syntax-highlights]
 1. Install all needed languages and packages for nvim. Open nvim and run `:checkhealth` command then install missing stuff.
    - Install languages and tools through Omarchy's `Install > Development` menu except python
    - For python versioning and venvs use `uv` (installed via `mise` or Arch repo)
