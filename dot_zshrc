@@ -47,7 +47,12 @@ source ${zsh_plugins}.zsh
 bindkey '^I' expand-or-complete       # Tab
 bindkey '^[[Z' reverse-menu-complete  # Shift+Tab
 bindkey '^Xa' glob-alias              # expand alias on <Ctrl + x, a>
-export ZVM_SYSTEM_CLIPBOARD_ENABLED=true
+
+# Set blink block in zephyr/editor plugin
+function update-cursor-style {
+  printf '\e[1 q'
+}
+zle -N update-cursor-style
 
 # Oh My Posh
 eval "$(oh-my-posh init zsh --config $HOME/.dracula.omp.json)"
@@ -108,4 +113,3 @@ nvim() {
       ;;
   esac
 }
-

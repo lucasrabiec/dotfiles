@@ -24,7 +24,8 @@ gtk-custom-css = tab-style.css
 
 # Cursor styling
 cursor-style = "block"
-cursor-style-blink = false
+cursor-style-blink = true
+shell-integration-features = no-cursor
 
 # Cursor styling + SSH session terminfo
 # (all shell integration options must be passed together)
@@ -69,3 +70,4 @@ theme = dracula
 
 # Fix general slowness on hyprland (https://github.com/ghostty-org/ghostty/discussions/3224)
 async-backend = epoll
+
