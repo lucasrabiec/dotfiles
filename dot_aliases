@@ -33,7 +33,8 @@ alias ....='cd ../../..'
 alias cal='cal -m' # Monday as first day
 
 # Tools
-alias c='opencode'
+alias c='claude'
+alias o='opencode'
 alias cx='printf "\033[2J\033[3J\033[H" && claude --allow-dangerously-skip-permissions'
 alias d='docker'
 alias r='rails'

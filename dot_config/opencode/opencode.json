@@ -14,5 +14,6 @@
       "ls *": "allow",
       "cat *": "allow"
     }
-  }
+  },
+  "plugin": ["caveman-opencode-plugin"]
 }
