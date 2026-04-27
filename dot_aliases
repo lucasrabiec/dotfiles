@@ -20,6 +20,26 @@ alias grm='git rebase main'
 alias gst='git status'
 alias gsu='git submodule update --remote'
 
+# removes merged local branches
+gcm() {
+  git fetch --prune origin
+
+  branches=$(git branch -vv \
+    | grep ': gone]' \
+    | grep -vE '^\*| main | master | develop ' \
+    | awk '{print $1}')
+
+  if [ -z "$branches" ]; then
+    echo "No gone local branches to delete"
+    return 0
+  fi
+
+  echo "Deleting gone local branches:"
+  echo "$branches"
+
+  echo "$branches" | xargs -n 1 git branch -D
+}
+
 # Paths
 alias cdw='cd ~/Work/'
 cdwc() { cd ~/Work/$1 ; }
