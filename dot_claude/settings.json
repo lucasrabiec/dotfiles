@@ -15,5 +15,16 @@
     }
   },
   "theme": "dark",
-  "effortLevel": "high"
+  "effortLevel": "high",
+  "allowedTools": [
+    "Bash(cat:*)",
+    "Bash(find:*)",
+    "Bash(cd:*)",
+    "Bash(diff:*)",
+    "Glob",
+    "Grep",
+    "Read",
+    "WebFetch",
+    "WebSearch"
+  ]
 }
