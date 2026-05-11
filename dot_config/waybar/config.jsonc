@@ -7,6 +7,7 @@
   "modules-left": ["custom/omarchy", "hyprland/workspaces", "mpris"],
   "modules-center": [
     "clock",
+    "custom/weather",
     "custom/update",
     "custom/voxtype",
     "custom/screenrecording-indicator",
@@ -102,6 +103,13 @@
       "on-scroll-down": "shift_down",
     },
     "on-click-middle": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select",
+  },
+  "custom/weather": {
+    "exec": "$OMARCHY_PATH/default/waybar/weather.sh",
+    "return-type": "json",
+    "interval": 60,
+    "tooltip": false,
+    "on-click": "notify-send -u low \"$(omarchy-weather-status)\"",
   },
   "network": {
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
