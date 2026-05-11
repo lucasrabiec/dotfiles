@@ -73,6 +73,7 @@
       "stopped": "",
     },
     "dynamic-order": ["title", "artist"],
+    "ignored-players": ["firefox"],
   },
   "cpu": {
     "interval": 5,
