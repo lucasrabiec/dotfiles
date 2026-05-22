@@ -1,5 +1,3 @@
-"$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
-
 [preview]
 show_hidden = true
 max_width = 500
@@ -32,7 +30,7 @@ prepend_preloaders = [
   { mime = "application/oasis.opendocument.*", run = "office" },
   { mime = "application/ms-*", run = "office" },
   { mime = "application/msword", run = "office" },
-  { name = "*.docx", run = "office" },
+  { url = "*.docx", run = "office" },
 ]
 prepend_previewers = [
   # Office Documents
@@ -40,7 +38,7 @@ prepend_previewers = [
   { mime = "application/oasis.opendocument.*", run = "office" },
   { mime = "application/ms-*", run = "office" },
   { mime = "application/msword", run = "office" },
-  { name = "*.docx", run = "office" },
+  { url = "*.docx", run = "office" },
 ]
 prepend_spotters = [
   { url = "*", run = "file-extra-metadata" },
