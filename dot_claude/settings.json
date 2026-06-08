@@ -4,7 +4,8 @@
     "command": "bash \"/home/lucas/.claude/plugins/cache/caveman/caveman/84cc3c14fa1e/hooks/caveman-statusline.sh\""
   },
   "enabledPlugins": {
-    "caveman@caveman": true
+    "caveman@caveman": true,
+    "pyright-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "caveman": {
@@ -14,8 +15,8 @@
       }
     }
   },
-  "theme": "dark",
   "effortLevel": "high",
+  "theme": "dark",
   "allowedTools": [
     "Bash(find:*)",
     "Bash(cat:*)",
