@@ -10,6 +10,9 @@ export EDITOR="nvim"
 export SUDO_EDITOR="$EDITOR"
 export BAT_THEME=ansi
 
+# UV
+export UV_GIT_LFS=1
+
 # antidote
 source $HOME/.antidote/antidote.zsh
 
@@ -57,14 +60,8 @@ zle -N update-cursor-style
 # Oh My Posh
 eval "$(oh-my-posh init zsh --config $HOME/.dracula.omp.json)"
 
-# Config ssh-agent
-if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-  eval "$(ssh-agent -s)" >/dev/null
-  if [ -n "$SSH_AUTH_SOCK" ]; then
-    ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
-  fi
-fi
-export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+# SSH agent via keychain
+eval $(keychain --eval --quiet ~/.ssh/id_ed25519)
 
 # Omarchy functions
 for f in $OMARCHY_PATH/default/bash/fns/*; do source "$f"; done
@@ -97,6 +94,13 @@ function y() {
 
 ## tmux
 source ~/.tmux-layouts.sh
+
+## clear last N history entries (default: 10)
+histdrop() {
+  local n=${1:-10}
+  head -n -"$n" "$HISTFILE" > /tmp/hist_tmp && mv /tmp/hist_tmp "$HISTFILE"
+  fc -R
+}
 
 ## nvim management command
 nvim() {
