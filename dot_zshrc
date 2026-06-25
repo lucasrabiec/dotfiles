@@ -57,11 +57,20 @@ function update-cursor-style {
 }
 zle -N update-cursor-style
 
+# SSH agent - persistent socket via symlink
+if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+  eval "$(ssh-agent -s)" >/dev/null
+  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+fi
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+
+# Load key once — flock serializes simultaneous pane starts
+if ! ssh-add -l &>/dev/null; then
+  (flock -x 9; ssh-add -l &>/dev/null || ssh-add ~/.ssh/id_ed25519) 9>~/.ssh/.ssh_add.lock
+fi
+
 # Oh My Posh
 eval "$(oh-my-posh init zsh --config $HOME/.dracula.omp.json)"
-
-# SSH agent via keychain
-eval $(keychain --eval --quiet ~/.ssh/id_ed25519)
 
 # Omarchy functions
 for f in $OMARCHY_PATH/default/bash/fns/*; do source "$f"; done
