@@ -1,5 +1,4 @@
 [tools]
-cargo = "latest"
 dotnet = "10"
 go = "latest"
 java = "latest"
