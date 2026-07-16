@@ -33,6 +33,5 @@
     "Read",
     "WebFetch",
     "WebSearch"
-  ],
-  "tui": "fullscreen"
+  ]
 }
