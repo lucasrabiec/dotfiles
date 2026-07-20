@@ -66,7 +66,7 @@ export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 
 # Load key once — flock serializes simultaneous pane starts
 if ! ssh-add -l &>/dev/null; then
-  (flock -x 9; ssh-add -l &>/dev/null || ssh-add ~/.ssh/id_ed25519) 9>~/.ssh/.ssh_add.lock
+  (flock -x 9; ssh-add -l &>/dev/null || ssh-add ~/.ssh/id_ed25519) 9>>~/.ssh/.ssh_add.lock
 fi
 
 # Oh My Posh
