@@ -58,10 +58,19 @@ function update-cursor-style {
 zle -N update-cursor-style
 
 # SSH agent - persistent socket via symlink
+mkdir -p ~/.ssh
+needs_agent=0
 if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+  needs_agent=1
+else
+  SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock ssh-add -l &>/dev/null
+  [ $? -eq 2 ] && needs_agent=1
+fi
+if [ "$needs_agent" = 1 ]; then
   eval "$(ssh-agent -s)" >/dev/null
   ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
 fi
+unset needs_agent
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 
 # Load key once — non-blocking flock: first pane prompts, others skip
