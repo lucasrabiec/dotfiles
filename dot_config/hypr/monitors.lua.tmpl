@@ -1,0 +1,41 @@
+-- See https://wiki.hypr.land/Configuring/Basics/Monitors/
+-- List current monitors and supported resolutions with: hyprctl monitors all
+
+local omarchy_gdk_scale = 1
+local omarchy_monitor_scale = 1.25
+
+hl.env("GDK_SCALE", tostring(omarchy_gdk_scale))
+hl.monitor({ output = "", mode = "preferred", position = "auto", scale = omarchy_monitor_scale })
+
+-- Configure a specific monitor.
+-- hl.monitor({ output = "DP-2", mode = "2560x1440@144", position = "0x0", scale = 1 })
+
+-- Portrait/rotated secondary monitor (transform: 1 = 90°, 3 = 270°).
+-- hl.monitor({ output = "DP-2", mode = "preferred", position = "auto", scale = 1, transform = 1 })
+
+hl.monitor({ output = "desc:Nreal Air 2 Ultra 0x88888800", mode = "1920x1080@60.00Hz", position = "auto-left", scale = "1" }) -- XREAL Air 2 Ultra Glasses
+hl.monitor({ output = "desc:CVT VITURE 0x88888800",        mode = "1920x1200@120.00Hz", position = "auto-left", scale = "1" }) -- Viture Luma Ultra Glasses
+{{- if eq .chezmoi.hostname "omarchy-work" }}
+hl.monitor({ output = "desc:AU Optronics 0x7DB2", mode = "2560x1600@240.00Hz", position = "auto", scale = "1.25" }) -- Laptop
+hl.monitor({ output = "desc:LG Electronics LG ULTRAWIDE 112NTGYBP239", mode = "3440x1440@84.96Hz", position = "auto-left", scale = "auto" }) -- Laptop - extended
+hl.monitor({ output = "desc:Iiyama North America PL2530H 1154384201945", mode = "1920x1080@74.97Hz", position = "auto-right", scale = "auto" }) -- Laptop - extended second
+
+hl.workspace_rule({ workspace = "1", monitor = "HDMI-A-1", default = true })
+hl.workspace_rule({ workspace = "2", monitor = "HDMI-A-1" })
+hl.workspace_rule({ workspace = "3", monitor = "HDMI-A-1" })
+hl.workspace_rule({ workspace = "4", monitor = "eDP-2", default = true })
+hl.workspace_rule({ workspace = "5", monitor = "eDP-2" })
+hl.workspace_rule({ workspace = "6", monitor = "eDP-2" })
+hl.workspace_rule({ workspace = "7", monitor = "eDP-2" })
+{{- else }}
+hl.monitor({ output = "DP-1", mode = "2560x1440@239.99Hz", position = "auto", scale = "auto" }) -- PC Center
+hl.monitor({ output = "DP-3", mode = "2560x1440@165Hz", position = "auto", scale = "auto" }) -- PC Right
+
+hl.workspace_rule({ workspace = "1", monitor = "DP-1", default = true })
+hl.workspace_rule({ workspace = "2", monitor = "DP-1" })
+hl.workspace_rule({ workspace = "3", monitor = "DP-1" })
+hl.workspace_rule({ workspace = "4", monitor = "DP-3", default = true })
+hl.workspace_rule({ workspace = "5", monitor = "DP-3" })
+hl.workspace_rule({ workspace = "6", monitor = "DP-3" })
+hl.workspace_rule({ workspace = "7", monitor = "DP-3" })
+{{- end }}
