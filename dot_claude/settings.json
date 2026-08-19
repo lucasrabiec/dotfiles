@@ -1,4 +1,20 @@
 {
+  "permissions": {
+    "defaultMode": "default",
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(grep:*)",
+      "Bash(mkdir:*)",
+      "Bash(cp * /tmp/*)",
+      "Bash(touch:*)",
+      "Bash(diff:*)",
+      "Glob",
+      "Grep",
+      "Read",
+      "WebFetch",
+      "WebSearch"
+    ]
+  },
   "statusLine": {
     "type": "command",
     "command": "bash \"/home/lucas/.claude/plugins/cache/caveman/caveman/84cc3c14fa1e/hooks/caveman-statusline.sh\""
@@ -16,22 +32,5 @@
     }
   },
   "effortLevel": "high",
-  "theme": "dark",
-  "allowedTools": [
-    "Bash(find:*)",
-    "Bash(cat:*)",
-    "Bash(ls:*)",
-    "Bash(grep:*)",
-    "Bash(echo:*)",
-    "Bash(mkdir:*)",
-    "Bash(cp:*)",
-    "Bash(mv:*)",
-    "Bash(touch:*)",
-    "Bash(diff:*)",
-    "Glob",
-    "Grep",
-    "Read",
-    "WebFetch",
-    "WebSearch"
-  ]
+  "theme": "dark"
 }
