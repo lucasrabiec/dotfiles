@@ -9,3 +9,6 @@ node = "25"
 rust = "latest"
 usage = "latest"
 uv = "latest"
+
+[settings.upgrade]
+auto_prune = false
