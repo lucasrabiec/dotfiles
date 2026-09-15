@@ -60,7 +60,7 @@ hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
 -- Per-device overrides.
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Devices/
 hl.device({ name = "apple-inc.-magic-trackpad", sensitivity = 0.1 })
-hl.device({ name = "razer-razer-deathadder-v3-pro", sensitivity = -0.65 })
+hl.device({ name = "razer-razer-deathadder-v3-pro", sensitivity = -0.1 })
 
 -- MX Master 3S: side scroll changes workspaces only on current monitor.
 hl.device({ name = "logitech-usb-receiver-mouse", scroll_factor = 0.7 })
