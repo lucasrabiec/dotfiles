@@ -5,3 +5,10 @@ refreshPeriod = "24h"
 
 [".config/nvim".pull]
 args = ["--ff-only"]
+
+[".local/share/timewarrior/data"]
+type = "git-repo"
+url = "git@github.com:lucasrabiec/timewarrior-data.git"
+
+[".local/share/timewarrior/data".pull]
+args = ["--ff-only"]

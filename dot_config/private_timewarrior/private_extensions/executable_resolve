@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+DATA_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/timewarrior/data"
+
+cd "$DATA_DIR"
+
+echo "Timewarrior conflict resolver"
+echo
+
+git fetch origin
+
+LOCAL="$(git rev-parse HEAD)"
+REMOTE="$(git rev-parse origin/main)"
+
+if [ "$LOCAL" = "$REMOTE" ]; then
+    echo "✓ Local repository is already synchronized with origin/main."
+    exit 0
+fi
+
+echo "Local:"
+git log -1 --oneline HEAD
+
+echo
+echo "Remote:"
+git log -1 --oneline origin/main
+
+echo
+echo "Changed Timewarrior files:"
+git diff --name-only HEAD origin/main
+
+echo
+echo "Automatic merging of Timewarrior .data files is intentionally disabled."
+echo
+echo "Recommended steps:"
+echo
+echo "  1. Inspect both versions:"
+echo "       git diff HEAD origin/main"
+echo
+echo "  2. Back up current data:"
+echo "       cp -a \"$DATA_DIR\" \"${DATA_DIR}.backup\""
+echo
+echo "  3. Decide which database should be the base."
+echo "  4. Import missing intervals with:"
+echo "       timew export ..."
+echo "       timew import ..."
+echo
+echo "Nothing has been modified."
