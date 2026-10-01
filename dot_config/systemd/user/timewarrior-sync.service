@@ -1,28 +1,26 @@
 [Unit]
 Description=Sync Timewarrior data with GitHub
-After=graphical-session.target
+After=ssh-agent.service
+Requires=ssh-agent.service
 
 [Service]
 Type=oneshot
 RemainAfterExit=yes
 
-# Use the SSH agent socket configured for this user.
+# Use the systemd-managed SSH agent.
 Environment=SSH_AUTH_SOCK=%h/.ssh/ssh_auth_sock
 
-# Prevent Git from asking for credentials interactively.
+# Prevent Git from prompting interactively.
 Environment=GIT_TERMINAL_PROMPT=0
 
-# Wait up to 30 seconds for the network to become available.
+# Wait up to 30 seconds for the network.
 ExecStartPre=/usr/bin/nm-online -q --timeout=30
 
-# Sync after the user session starts.
+# Sync after the SSH key has been unlocked.
 ExecStart=/usr/bin/timew sync
 
-# Sync when the user session or system is shutting down.
+# Sync before the SSH agent is stopped.
 ExecStop=/usr/bin/timew sync
 
 TimeoutStartSec=45
 TimeoutStopSec=20
-
-[Install]
-WantedBy=default.target

@@ -1,0 +1,17 @@
+[Unit]
+Description=SSH authentication agent
+
+[Service]
+Type=simple
+
+# Use a stable SSH agent socket.
+Environment=SSH_AUTH_SOCK=%h/.ssh/ssh_auth_sock
+
+# Remove a stale socket left from a previous session.
+ExecStartPre=/usr/bin/rm -f %h/.ssh/ssh_auth_sock
+
+# Keep the SSH agent alive for the entire user session.
+ExecStart=/usr/bin/ssh-agent -D -a %h/.ssh/ssh_auth_sock
+
+[Install]
+WantedBy=default.target

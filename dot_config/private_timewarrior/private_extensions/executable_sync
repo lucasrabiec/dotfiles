@@ -2,37 +2,40 @@
 
 set -euo pipefail
 
-DATA_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/timewarrior/data"
-HOST="$(hostname)"
-NOW="$(date '+%Y-%m-%d %H:%M')"
+data_dir="${XDG_DATA_HOME:-$HOME/.local/share}/timewarrior/data"
+host="$(hostname)"
+now="$(date '+%Y-%m-%d %H:%M')"
 
-cd "$DATA_DIR"
+cd "$data_dir"
 
-HAS_LOCAL_CHANGES=false
-
-echo "→ Checking local changes..."
+echo "→ checking local changes..."
 
 git add .
 
 if ! git diff --cached --quiet; then
-  git commit -m "chore(timew): sync worklog from ${HOST} (${NOW})"
-  HAS_LOCAL_CHANGES=true
+  git commit -m "sync: worklog from ${host} (${now})"
 else
-  echo "  No local changes."
+  echo "  no local changes."
 fi
 
-echo "→ Fetching remote changes..."
-git fetch origin
+echo "→ fetching remote changes..."
 
-echo "→ Rebasing onto origin/main..."
+if ! git fetch origin; then
+  echo
+  echo "✗ failed to fetch remote changes."
+  echo "  local commits are safe and will be pushed on the next sync."
+  exit 1
+fi
+
+echo "→ rebasing onto origin/main..."
 
 if ! git rebase origin/main; then
   echo
-  echo "✗ Sync conflict detected."
-  echo "  No remote data was overwritten."
-  echo "  Rebase has been aborted."
+  echo "✗ sync conflict detected."
+  echo "  no remote data was overwritten."
+  echo "  rebase has been aborted."
   echo
-  echo "  Run:"
+  echo "  run:"
   echo
   echo "    timew resolve"
   echo
@@ -41,12 +44,14 @@ if ! git rebase origin/main; then
   exit 1
 fi
 
-if [ "$HAS_LOCAL_CHANGES" = true ]; then
-  echo "→ Pushing local changes..."
+ahead="$(git rev-list --count origin/main..HEAD)"
+
+if [ "$ahead" -gt 0 ]; then
+  echo "→ pushing ${ahead} local commit(s)..."
   git push origin main
 else
-  echo "→ No local changes to push."
+  echo "→ no local commits to push."
 fi
 
 echo
-echo "✓ Timewarrior synchronized successfully."
+echo "✓ timewarrior synchronized successfully."
