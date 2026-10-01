@@ -1,0 +1,25 @@
+[Unit]
+Description=Sync Timewarrior data with GitHub
+After=graphical-session.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+# Prevent Git from asking for credentials interactively.
+Environment=GIT_TERMINAL_PROMPT=0
+
+# Wait up to 30 seconds for the network to become available.
+ExecStartPre=/usr/bin/nm-online -q --timeout=30
+
+# Sync after the user session starts.
+ExecStart=/usr/bin/timew sync
+
+# Sync when the user session or system is shutting down.
+ExecStop=/usr/bin/timew sync
+
+TimeoutStartSec=45
+TimeoutStopSec=20
+
+[Install]
+WantedBy=default.target
