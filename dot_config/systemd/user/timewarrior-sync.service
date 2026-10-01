@@ -6,6 +6,9 @@ After=graphical-session.target
 Type=oneshot
 RemainAfterExit=yes
 
+# Use the SSH agent socket configured for this user.
+Environment=SSH_AUTH_SOCK=%h/.ssh/ssh_auth_sock
+
 # Prevent Git from asking for credentials interactively.
 Environment=GIT_TERMINAL_PROMPT=0
 
