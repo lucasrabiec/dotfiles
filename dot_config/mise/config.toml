@@ -1,14 +1,10 @@
 [tools]
-claude = "latest"
-codex = "latest"
 dotnet = "10"
-gh = "latest"
 go = "latest"
 java = "latest"
-node = "25"
+node = "26"
 rust = "latest"
 usage = "latest"
 uv = "latest"
 
 [settings.upgrade]
-auto_prune = false
