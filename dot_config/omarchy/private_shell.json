@@ -15,6 +15,9 @@
         },
         {
           "id": "omarchy.workspaces"
+        },
+        {
+          "id": "now-playing"
         }
       ],
       "right": [
@@ -78,9 +81,13 @@
           "id": "omarchy.agents"
         },
         {
+          "id": "gpdenny.linear"
+        },
+        {
           "id": "omarchy.system-update"
         }
-      ]
+      ],
+      "tray": []
     },
     "position": "top",
     "transparent": false

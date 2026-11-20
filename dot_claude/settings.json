@@ -17,7 +17,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "bash \"/home/lucas/.claude/plugins/cache/caveman/caveman/84cc3c14fa1e/hooks/caveman-statusline.sh\""
+    "command": "bash \"/home/lucas/.claude/plugins/marketplaces/caveman/src/hooks/caveman-statusline.sh\""
   },
   "enabledPlugins": {
     "caveman@caveman": true,
