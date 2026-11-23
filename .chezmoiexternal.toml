@@ -12,3 +12,19 @@ url = "git@github.com:lucasrabiec/timewarrior-data.git"
 
 [".local/share/timewarrior/data".pull]
 args = ["--ff-only"]
+
+[".config/omarchy/plugins/now-playing"]
+type = "git-repo"
+url = "https://github.com/bjarneo/omarchy-now-playing.git"
+refreshPeriod = "168h"
+
+[".config/omarchy/plugins/now-playing".pull]
+args = ["--ff-only"]
+
+[".config/omarchy/plugins/gpdenny.linear"]
+type = "git-repo"
+url = "https://github.com/gpdenny/omarchy-linear.git"
+refreshPeriod = "168h"
+
+[".config/omarchy/plugins/gpdenny.linear".pull]
+args = ["--ff-only"]
