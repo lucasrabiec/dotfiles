@@ -40,7 +40,8 @@
           "id": "omarchy.monitor"
         },
         {
-          "id": "omarchy.power"
+          "id": "omarchy.power",
+          "showPercentage": true
         }
       ],
       "centerBegin": [
@@ -79,7 +80,8 @@
               "name": "New York",
               "zone": "America/New_York"
             }
-          ]
+          ],
+          "units": "C"
         },
         {
           "id": "omarchy.weather"
