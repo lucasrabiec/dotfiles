@@ -59,5 +59,14 @@ o.bind("SUPER + T", "Toggle window floating/tiling", function()
 	hl.dispatch(hl.dsp.window.center())
 end)
 
+-- Tmux: start server first so continuum restores saved sessions, then attach
+-- (default binding creates an extra "Work" session on cold start)
+hl.unbind("SUPER + ALT + RETURN")
+o.bind(
+	"SUPER + ALT + RETURN",
+	"Tmux",
+	[[omarchy-launch-terminal bash -c 'tmux has-session 2>/dev/null || { tmux start-server; sleep 1; }; tmux attach || tmux new']]
+)
+
 -- Restart Hyprland in case of error
 o.bind("SUPER + CTRL + HOME", "Restart Hyperland", "hyprctl dispatch exit && Hyprland")
