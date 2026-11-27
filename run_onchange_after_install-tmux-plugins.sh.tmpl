@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# Install TPM plugins whenever tmux.conf changes.
+# tmux.conf hash: {{ include "dot_config/tmux/tmux.conf" | sha256sum }}
+
+"${HOME}/.config/tmux/plugins/tpm/bin/install_plugins"

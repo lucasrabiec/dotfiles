@@ -1,0 +1,15 @@
+{{- $clientId := onepasswordRead "op://Software/rclone-google-client/username" "my.1password.com" -}}
+{{- $clientSecret := onepasswordRead "op://Software/rclone-google-client/credential" "my.1password.com" -}}
+[gdrive-priv]
+type = drive
+client_id = {{ $clientId }}
+client_secret = {{ $clientSecret }}
+scope = drive
+team_drive =
+
+[gdrive-1mb]
+type = drive
+client_id = {{ $clientId }}
+client_secret = {{ $clientSecret }}
+scope = drive
+team_drive =

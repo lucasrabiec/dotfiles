@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-OM_BIN="$HOME/.local/share/omarchy/bin"
+OM_BIN="${OMARCHY_PATH:-/usr/share/omarchy}/bin"
 
 install_font() {
   local label="$1"

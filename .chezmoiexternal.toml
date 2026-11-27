@@ -34,3 +34,19 @@ type = "file"
 url = "https://raw.githubusercontent.com/UpayanChatterjee/hypr-session-restore/main/hypr-session-restore"
 executable = true
 refreshPeriod = "168h"
+
+[".config/tmux/plugins/tpm"]
+type = "git-repo"
+url = "https://github.com/tmux-plugins/tpm.git"
+refreshPeriod = "168h"
+
+[".config/tmux/plugins/tpm".pull]
+args = ["--ff-only"]
+
+[".config/omarchy/themes/dracula"]
+type = "git-repo"
+url = "https://github.com/catlee/omarchy-dracula-theme.git"
+refreshPeriod = "168h"
+
+[".config/omarchy/themes/dracula".pull]
+args = ["--ff-only"]

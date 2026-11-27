@@ -1,9 +1,9 @@
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+# Omarchy sets this for the Hyprland session; set it here so SSH works too
+export OMARCHY_PATH=/usr/share/omarchy
 
-# Duplicated from .config/uwsm/env so SSH works too
-export OMARCHY_PATH=$HOME/.local/share/omarchy
-export PATH=$OMARCHY_PATH/bin:$PATH:$HOME/.local/bin
+# Keep PATH entries unique (also when nested shells re-add them)
+typeset -U path
+export PATH=$OMARCHY_PATH/bin:$HOME/.local/bin:$PATH
 
 # Preferred editor
 export EDITOR="nvim"

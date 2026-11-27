@@ -9,7 +9,7 @@ plugins=(
   "yazi-rs/plugins:smart-enter"
   "yazi-rs/plugins:chmod"
   "yazi-rs/flavors:dracula"
-  "macydnah/office"
+  "UnleashedFurai/office" # fork with yazi 26 fix (macydnah/office.yazi#18); switch back after merge
   "boydaihungst/file-extra-metadata"
 )
 

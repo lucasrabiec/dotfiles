@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Upgrade yazi plugins and flavors after a system update, so they keep up
+# with API changes in new yazi releases.
+if command -v ya >/dev/null 2>&1; then
+  echo "Upgrading yazi packages..."
+  ya pkg upgrade
+fi
