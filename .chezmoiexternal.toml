@@ -28,3 +28,9 @@ refreshPeriod = "168h"
 
 [".config/omarchy/plugins/gpdenny.linear".pull]
 args = ["--ff-only"]
+
+[".local/bin/hypr-session-restore"]
+type = "file"
+url = "https://raw.githubusercontent.com/UpayanChatterjee/hypr-session-restore/main/hypr-session-restore"
+executable = true
+refreshPeriod = "168h"
